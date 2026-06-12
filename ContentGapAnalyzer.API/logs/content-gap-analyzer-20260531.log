@@ -1,0 +1,1047 @@
+2026-05-31 00:01:48.778 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 00:02:14.090 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 00:27:36.371 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 00:27:38.499 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 00:29:47.700 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 00:29:47.973 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 02:05:32.183 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:07:31.613 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 HTTP GET /api/v1/Discovery/trending started | CorrelationId: c713d43d-1882-4700-9077-9cb8c73215a2
+2026-05-31 02:07:33.903 +02:00 [WRN] c713d43d-1882-4700-9077-9cb8c73215a2 Failed to determine the https port for redirect.
+2026-05-31 02:07:34.367 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Handling FetchTrendingVideosCommand
+2026-05-31 02:07:35.663 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Fetching trending videos from YouTube: region=US, category=
+2026-05-31 02:07:35.704 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 02:07:35.776 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 02:07:36.792 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Received HTTP response headers after 962.0758ms - 200
+2026-05-31 02:07:36.843 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 End processing HTTP request after 1159.046ms - 200
+2026-05-31 02:07:39.110 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:07:39.114 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:07:46.650 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 Received HTTP response headers after 7534.9785ms - 200
+2026-05-31 02:07:46.654 +02:00 [INF] c713d43d-1882-4700-9077-9cb8c73215a2 End processing HTTP request after 7543.8948ms - 200
+2026-05-31 02:07:51.933 +02:00 [ERR] c713d43d-1882-4700-9077-9cb8c73215a2 Failed executing DbCommand (153ms) [Parameters=[@__video_VideoId_0='?' (Size = 32)], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[AverageViewDuration], [g].[Category], [g].[ChannelId], [g].[ClickThroughRate], [g].[CommentCount], [g].[CreatedAt], [g].[Description], [g].[IsDeleted], [g].[LikeCount], [g].[PublishedAt], [g].[ThumbnailUrl], [g].[Title], [g].[UpdatedAt], [g].[VideoId], [g].[ViewCount], [g].[WatchTimeMinutes]
+FROM [Generated_Videos] AS [g]
+WHERE [g].[VideoId] = @__video_VideoId_0
+2026-05-31 02:07:52.231 +02:00 [ERR] c713d43d-1882-4700-9077-9cb8c73215a2 An exception occurred while iterating over the results of a query for context type 'ContentGapAnalyzer.Infrastructure.Persistence.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'VideoId'.
+Invalid column name 'AverageViewDuration'.
+Invalid column name 'Category'.
+Invalid column name 'ChannelId'.
+Invalid column name 'ClickThroughRate'.
+Invalid column name 'CommentCount'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'Description'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LikeCount'.
+Invalid column name 'PublishedAt'.
+Invalid column name 'ThumbnailUrl'.
+Invalid column name 'Title'.
+Invalid column name 'UpdatedAt'.
+Invalid column name 'VideoId'.
+Invalid column name 'ViewCount'.
+Invalid column name 'WatchTimeMinutes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:61989071-53e8-46d5-b101-59e90fa35ad7
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'VideoId'.
+Invalid column name 'AverageViewDuration'.
+Invalid column name 'Category'.
+Invalid column name 'ChannelId'.
+Invalid column name 'ClickThroughRate'.
+Invalid column name 'CommentCount'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'Description'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LikeCount'.
+Invalid column name 'PublishedAt'.
+Invalid column name 'ThumbnailUrl'.
+Invalid column name 'Title'.
+Invalid column name 'UpdatedAt'.
+Invalid column name 'VideoId'.
+Invalid column name 'ViewCount'.
+Invalid column name 'WatchTimeMinutes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:61989071-53e8-46d5-b101-59e90fa35ad7
+Error Number:207,State:1,Class:16
+2026-05-31 02:07:52.555 +02:00 [ERR] c713d43d-1882-4700-9077-9cb8c73215a2 HTTP GET /api/v1/Discovery/trending responded 500 in 20864.2863ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'VideoId'.
+Invalid column name 'AverageViewDuration'.
+Invalid column name 'Category'.
+Invalid column name 'ChannelId'.
+Invalid column name 'ClickThroughRate'.
+Invalid column name 'CommentCount'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'Description'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LikeCount'.
+Invalid column name 'PublishedAt'.
+Invalid column name 'ThumbnailUrl'.
+Invalid column name 'Title'.
+Invalid column name 'UpdatedAt'.
+Invalid column name 'VideoId'.
+Invalid column name 'ViewCount'.
+Invalid column name 'WatchTimeMinutes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 27
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 101
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:61989071-53e8-46d5-b101-59e90fa35ad7
+Error Number:207,State:1,Class:16
+2026-05-31 02:07:53.007 +02:00 [ERR]  Unhandled exception on GET /api/v1/Discovery/trending
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'VideoId'.
+Invalid column name 'AverageViewDuration'.
+Invalid column name 'Category'.
+Invalid column name 'ChannelId'.
+Invalid column name 'ClickThroughRate'.
+Invalid column name 'CommentCount'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'Description'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LikeCount'.
+Invalid column name 'PublishedAt'.
+Invalid column name 'ThumbnailUrl'.
+Invalid column name 'Title'.
+Invalid column name 'UpdatedAt'.
+Invalid column name 'VideoId'.
+Invalid column name 'ViewCount'.
+Invalid column name 'WatchTimeMinutes'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 27
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 101
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+ClientConnectionId:61989071-53e8-46d5-b101-59e90fa35ad7
+Error Number:207,State:1,Class:16
+2026-05-31 02:15:48.214 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:15:48.715 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 02:33:30.381 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:33:30.591 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 02:35:58.435 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:36:15.547 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 02:44:14.361 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:44:16.239 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 02:45:19.530 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:45:41.032 +02:00 [INF] 7062704c-0b80-4df2-adfe-214542b40799 HTTP GET /swagger/index.html started | CorrelationId: 7062704c-0b80-4df2-adfe-214542b40799
+2026-05-31 02:45:41.032 +02:00 [INF] 0ec67a99-58a1-4033-89a3-3d305aa400b9 HTTP GET /swagger/index.html started | CorrelationId: 0ec67a99-58a1-4033-89a3-3d305aa400b9
+2026-05-31 02:45:42.072 +02:00 [INF] 7062704c-0b80-4df2-adfe-214542b40799 HTTP GET /swagger/index.html responded 200 in 981.7141ms
+2026-05-31 02:45:42.072 +02:00 [INF] 0ec67a99-58a1-4033-89a3-3d305aa400b9 HTTP GET /swagger/index.html responded 200 in 971.6939ms
+2026-05-31 02:45:42.077 +02:00 [INF] 7062704c-0b80-4df2-adfe-214542b40799 HTTP GET /swagger/index.html completed with 200 | CorrelationId: 7062704c-0b80-4df2-adfe-214542b40799
+2026-05-31 02:45:42.077 +02:00 [INF] 0ec67a99-58a1-4033-89a3-3d305aa400b9 HTTP GET /swagger/index.html completed with 200 | CorrelationId: 0ec67a99-58a1-4033-89a3-3d305aa400b9
+2026-05-31 02:45:50.482 +02:00 [INF] 3bcb8fe8-7822-4b1a-92bc-036a92cab36f HTTP GET /swagger/v1/swagger.json started | CorrelationId: 3bcb8fe8-7822-4b1a-92bc-036a92cab36f
+2026-05-31 02:45:51.741 +02:00 [INF] 3bcb8fe8-7822-4b1a-92bc-036a92cab36f HTTP GET /swagger/v1/swagger.json responded 200 in 1250.2141ms
+2026-05-31 02:45:51.745 +02:00 [INF] 3bcb8fe8-7822-4b1a-92bc-036a92cab36f HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: 3bcb8fe8-7822-4b1a-92bc-036a92cab36f
+2026-05-31 02:46:16.435 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 HTTP GET /api/v1/Discovery/trending started | CorrelationId: de7bf732-9a70-4998-8e4b-15183d0aca76
+2026-05-31 02:46:16.466 +02:00 [WRN] de7bf732-9a70-4998-8e4b-15183d0aca76 Failed to determine the https port for redirect.
+2026-05-31 02:46:17.470 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Handling FetchTrendingVideosCommand
+2026-05-31 02:46:17.906 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Fetching trending videos from YouTube: region=EG, category=
+2026-05-31 02:46:18.046 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 02:46:18.105 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 02:46:18.694 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Received HTTP response headers after 584.6637ms - 200
+2026-05-31 02:46:18.726 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 End processing HTTP request after 660.3666ms - 200
+2026-05-31 02:46:19.789 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:46:19.791 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:46:31.584 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Received HTTP response headers after 11791.0225ms - 200
+2026-05-31 02:46:31.588 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 End processing HTTP request after 11798.6188ms - 200
+2026-05-31 02:46:34.277 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:46:34.279 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:46:43.381 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Received HTTP response headers after 9101.0619ms - 200
+2026-05-31 02:46:43.383 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 End processing HTTP request after 9105.8664ms - 200
+2026-05-31 02:46:44.488 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:46:44.490 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 02:46:52.629 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 Received HTTP response headers after 8136.7755ms - 200
+2026-05-31 02:46:52.632 +02:00 [INF] de7bf732-9a70-4998-8e4b-15183d0aca76 End processing HTTP request after 8143.9326ms - 200
+2026-05-31 02:46:53.322 +02:00 [ERR] de7bf732-9a70-4998-8e4b-15183d0aca76 Failed executing DbCommand (285ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (Size = 50), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Boolean), @p6='?' (Size = 200), @p7='?' (Size = 10), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CachedTrendResults] ([CacheKey], [Category], [CreatedAt], [ExpiresAt], [HitCount], [IsDeleted], [Keywords], [Region], [ResultJson], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2026-05-31 02:46:53.774 +02:00 [ERR] de7bf732-9a70-4998-8e4b-15183d0aca76 An exception occurred in the database while saving changes for context type 'ContentGapAnalyzer.Infrastructure.Persistence.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6e72a9ab-df8e-40e8-a907-d18d35c6463c
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6e72a9ab-df8e-40e8-a907-d18d35c6463c
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-05-31 02:46:53.837 +02:00 [ERR] de7bf732-9a70-4998-8e4b-15183d0aca76 HTTP GET /api/v1/Discovery/trending responded 500 in 37399.8812ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6e72a9ab-df8e-40e8-a907-d18d35c6463c
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.UnitOfWork.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\UnitOfWork.cs:line 23
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 142
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-31 02:46:54.395 +02:00 [ERR]  Unhandled exception on GET /api/v1/Discovery/trending
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6e72a9ab-df8e-40e8-a907-d18d35c6463c
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.UnitOfWork.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\UnitOfWork.cs:line 23
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 142
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+2026-05-31 02:58:53.624 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 02:58:54.627 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 03:03:42.622 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 03:03:57.669 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 03:11:54.607 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 03:12:26.301 +02:00 [INF] 317e6284-0336-4a81-83ef-bf898cc155bd HTTP GET /swagger/index.html started | CorrelationId: 317e6284-0336-4a81-83ef-bf898cc155bd
+2026-05-31 03:12:27.250 +02:00 [INF] 317e6284-0336-4a81-83ef-bf898cc155bd HTTP GET /swagger/index.html responded 200 in 883.6433ms
+2026-05-31 03:12:27.284 +02:00 [INF] 317e6284-0336-4a81-83ef-bf898cc155bd HTTP GET /swagger/index.html completed with 200 | CorrelationId: 317e6284-0336-4a81-83ef-bf898cc155bd
+2026-05-31 03:12:35.079 +02:00 [INF] 1b21955f-1d79-45bf-9ebf-e683038ce463 HTTP GET /swagger/v1/swagger.json started | CorrelationId: 1b21955f-1d79-45bf-9ebf-e683038ce463
+2026-05-31 03:12:37.549 +02:00 [INF] 1b21955f-1d79-45bf-9ebf-e683038ce463 HTTP GET /swagger/v1/swagger.json responded 200 in 2466.2033ms
+2026-05-31 03:12:37.554 +02:00 [INF] 1b21955f-1d79-45bf-9ebf-e683038ce463 HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: 1b21955f-1d79-45bf-9ebf-e683038ce463
+2026-05-31 03:12:37.558 +02:00 [WRN] 1b21955f-1d79-45bf-9ebf-e683038ce463 SLOW REQUEST: GET /swagger/v1/swagger.json took 2478ms
+2026-05-31 03:13:42.545 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 HTTP GET /api/v1/Discovery/trending started | CorrelationId: eb643aef-0034-48e1-b3d2-92018537b792
+2026-05-31 03:13:42.573 +02:00 [WRN] eb643aef-0034-48e1-b3d2-92018537b792 Failed to determine the https port for redirect.
+2026-05-31 03:13:42.989 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Handling FetchTrendingVideosCommand
+2026-05-31 03:13:44.131 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Fetching trending videos from YouTube: region=EG, category=
+2026-05-31 03:13:44.168 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 03:13:44.229 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 03:13:44.919 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Received HTTP response headers after 686.8792ms - 200
+2026-05-31 03:13:44.936 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 End processing HTTP request after 789.41ms - 200
+2026-05-31 03:13:46.613 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:13:46.620 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:13:58.078 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Received HTTP response headers after 11456.097ms - 200
+2026-05-31 03:13:58.080 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 End processing HTTP request after 11466.9163ms - 200
+2026-05-31 03:14:00.903 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:14:00.905 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:14:07.123 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Received HTTP response headers after 6216.6905ms - 200
+2026-05-31 03:14:07.125 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 End processing HTTP request after 6221.7921ms - 200
+2026-05-31 03:14:07.227 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:14:07.231 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:14:17.652 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 Received HTTP response headers after 10419.8585ms - 200
+2026-05-31 03:14:17.653 +02:00 [INF] eb643aef-0034-48e1-b3d2-92018537b792 End processing HTTP request after 10426.9555ms - 200
+2026-05-31 03:14:17.937 +02:00 [ERR] eb643aef-0034-48e1-b3d2-92018537b792 Failed executing DbCommand (77ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (Size = 50), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Boolean), @p6='?' (Size = 200), @p7='?' (Size = 10), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CachedTrendResults] ([CacheKey], [Category], [CreatedAt], [ExpiresAt], [HitCount], [IsDeleted], [Keywords], [Region], [ResultJson], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2026-05-31 03:14:18.158 +02:00 [ERR] eb643aef-0034-48e1-b3d2-92018537b792 An exception occurred in the database while saving changes for context type 'ContentGapAnalyzer.Infrastructure.Persistence.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:741b064f-0aad-4f88-b105-f07001bce3c7
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:741b064f-0aad-4f88-b105-f07001bce3c7
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-05-31 03:14:18.396 +02:00 [ERR] eb643aef-0034-48e1-b3d2-92018537b792 HTTP GET /api/v1/Discovery/trending responded 500 in 35849.4086ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:741b064f-0aad-4f88-b105-f07001bce3c7
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.UnitOfWork.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\UnitOfWork.cs:line 23
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 142
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-31 03:14:18.594 +02:00 [ERR]  Unhandled exception on GET /api/v1/Discovery/trending
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'CachedTrendResults'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:741b064f-0aad-4f88-b105-f07001bce3c7
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.UnitOfWork.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\UnitOfWork.cs:line 23
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 142
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+2026-05-31 03:20:42.872 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 03:20:43.941 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 03:21:21.738 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 03:21:21.995 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 03:27:04.278 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 03:27:04.524 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 03:33:32.142 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 03:33:59.314 +02:00 [INF] be823384-f4e9-42fa-8449-902a6d09e9af HTTP GET /swagger/index.html started | CorrelationId: be823384-f4e9-42fa-8449-902a6d09e9af
+2026-05-31 03:33:59.765 +02:00 [INF] be823384-f4e9-42fa-8449-902a6d09e9af HTTP GET /swagger/index.html responded 200 in 442.7473ms
+2026-05-31 03:33:59.801 +02:00 [INF] be823384-f4e9-42fa-8449-902a6d09e9af HTTP GET /swagger/index.html completed with 200 | CorrelationId: be823384-f4e9-42fa-8449-902a6d09e9af
+2026-05-31 03:34:02.208 +02:00 [INF] 98bfa21c-2e06-4611-87f3-59fb4afa93c7 HTTP GET /swagger/v1/swagger.json started | CorrelationId: 98bfa21c-2e06-4611-87f3-59fb4afa93c7
+2026-05-31 03:34:02.469 +02:00 [INF] 98bfa21c-2e06-4611-87f3-59fb4afa93c7 HTTP GET /swagger/v1/swagger.json responded 200 in 257.7231ms
+2026-05-31 03:34:02.473 +02:00 [INF] 98bfa21c-2e06-4611-87f3-59fb4afa93c7 HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: 98bfa21c-2e06-4611-87f3-59fb4afa93c7
+2026-05-31 03:34:21.394 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 HTTP GET /api/v1/Discovery/trending started | CorrelationId: 5a821936-ff2d-4b59-bfc9-36b119dabca0
+2026-05-31 03:34:21.398 +02:00 [WRN] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Failed to determine the https port for redirect.
+2026-05-31 03:34:21.635 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Handling FetchTrendingVideosCommand
+2026-05-31 03:34:21.975 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Fetching trending videos from YouTube: region=EG, category=
+2026-05-31 03:34:22.016 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 03:34:22.063 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 03:34:22.463 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Received HTTP response headers after 393.822ms - 200
+2026-05-31 03:34:22.471 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 End processing HTTP request after 482.8493ms - 200
+2026-05-31 03:34:23.373 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:34:23.375 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:34:33.115 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Received HTTP response headers after 9739.5623ms - 200
+2026-05-31 03:34:33.119 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 End processing HTTP request after 9746.2604ms - 200
+2026-05-31 03:34:45.978 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:34:45.980 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:34:54.848 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Received HTTP response headers after 8866.9206ms - 200
+2026-05-31 03:34:54.851 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 End processing HTTP request after 8873.0467ms - 200
+2026-05-31 03:34:54.952 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:34:54.953 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 03:35:03.900 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 Received HTTP response headers after 8946.0074ms - 200
+2026-05-31 03:35:03.904 +02:00 [INF] 5a821936-ff2d-4b59-bfc9-36b119dabca0 End processing HTTP request after 8952.5691ms - 200
+2026-05-31 03:35:04.648 +02:00 [ERR] 5a821936-ff2d-4b59-bfc9-36b119dabca0 HTTP GET /api/v1/Discovery/trending responded 500 in 43252.4559ms
+System.InvalidOperationException: Cache entry must specify a value for Size when SizeLimit is set.
+   at Microsoft.Extensions.Caching.Memory.MemoryCache.SetEntry(CacheEntry entry)
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.Set[TItem](IMemoryCache cache, Object key, TItem value, TimeSpan absoluteExpirationRelativeToNow)
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 145
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-31 03:35:05.257 +02:00 [ERR]  Unhandled exception on GET /api/v1/Discovery/trending
+System.InvalidOperationException: Cache entry must specify a value for Size when SizeLimit is set.
+   at Microsoft.Extensions.Caching.Memory.MemoryCache.SetEntry(CacheEntry entry)
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.Set[TItem](IMemoryCache cache, Object key, TItem value, TimeSpan absoluteExpirationRelativeToNow)
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 145
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+2026-05-31 04:17:01.601 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 04:20:39.371 +02:00 [INF] 5c4ac35a-27a6-4592-a683-ff60c7954c11 HTTP GET /swagger/index.html started | CorrelationId: 5c4ac35a-27a6-4592-a683-ff60c7954c11
+2026-05-31 04:20:53.254 +02:00 [INF] 5c4ac35a-27a6-4592-a683-ff60c7954c11 HTTP GET /swagger/index.html responded 200 in 13401.2104ms
+2026-05-31 04:20:53.393 +02:00 [INF] 5c4ac35a-27a6-4592-a683-ff60c7954c11 HTTP GET /swagger/index.html completed with 200 | CorrelationId: 5c4ac35a-27a6-4592-a683-ff60c7954c11
+2026-05-31 04:20:53.399 +02:00 [WRN] 5c4ac35a-27a6-4592-a683-ff60c7954c11 SLOW REQUEST: GET /swagger/index.html took 14229ms
+2026-05-31 04:25:00.748 +02:00 [INF] efe60060-c255-4163-a6d8-83b1f3f86b16 HTTP GET /swagger/v1/swagger.json started | CorrelationId: efe60060-c255-4163-a6d8-83b1f3f86b16
+2026-05-31 04:25:11.860 +02:00 [INF] efe60060-c255-4163-a6d8-83b1f3f86b16 HTTP GET /swagger/v1/swagger.json responded 200 in 11109.9587ms
+2026-05-31 04:25:11.867 +02:00 [INF] efe60060-c255-4163-a6d8-83b1f3f86b16 HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: efe60060-c255-4163-a6d8-83b1f3f86b16
+2026-05-31 04:25:11.871 +02:00 [WRN] efe60060-c255-4163-a6d8-83b1f3f86b16 SLOW REQUEST: GET /swagger/v1/swagger.json took 11122ms
+2026-05-31 04:28:23.669 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 HTTP GET /api/v1/Discovery/trending started | CorrelationId: 8d168952-c4cd-4ead-8fd5-2830d56a20f6
+2026-05-31 04:28:24.278 +02:00 [WRN] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Failed to determine the https port for redirect.
+2026-05-31 04:28:32.738 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Handling FetchTrendingVideosCommand
+2026-05-31 04:29:09.609 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Fetching trending videos from YouTube: region=EG, category=
+2026-05-31 04:29:10.706 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 04:29:12.004 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=EG&maxResults=3&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-05-31 04:29:27.123 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Received HTTP response headers after 15113.1344ms - 200
+2026-05-31 04:29:27.343 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 End processing HTTP request after 16749.225ms - 200
+2026-05-31 04:29:52.426 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 04:29:52.427 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 04:30:00.384 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Received HTTP response headers after 7818.227ms - 200
+2026-05-31 04:30:00.386 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 End processing HTTP request after 7960.4183ms - 200
+2026-05-31 04:31:43.952 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 04:31:43.955 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 04:31:53.913 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Received HTTP response headers after 9957.2302ms - 200
+2026-05-31 04:31:53.917 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 End processing HTTP request after 9964.2548ms - 200
+2026-05-31 04:31:54.397 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 04:31:54.399 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-05-31 04:32:04.846 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Received HTTP response headers after 10445.4513ms - 200
+2026-05-31 04:32:04.853 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 End processing HTTP request after 10456.2095ms - 200
+2026-05-31 04:32:11.946 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Handled FetchTrendingVideosCommand in 218970ms
+2026-05-31 04:32:11.950 +02:00 [WRN] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 Slow request detected: FetchTrendingVideosCommand took 218970ms
+2026-05-31 04:32:12.512 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 HTTP GET /api/v1/Discovery/trending responded 200 in 228841.2222ms
+2026-05-31 04:32:12.662 +02:00 [INF] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 HTTP GET /api/v1/Discovery/trending completed with 200 | CorrelationId: 8d168952-c4cd-4ead-8fd5-2830d56a20f6
+2026-05-31 04:32:12.665 +02:00 [WRN] 8d168952-c4cd-4ead-8fd5-2830d56a20f6 SLOW REQUEST: GET /api/v1/Discovery/trending took 228995ms
+2026-05-31 04:36:08.555 +02:00 [INF] 143e7b8f-2235-4dfe-bc12-5d105e386566 HTTP GET /api/v1/Discovery/channels/UCO-OdMztI8WPVoz_Dq9n48Q/videos started | CorrelationId: 143e7b8f-2235-4dfe-bc12-5d105e386566
+2026-05-31 04:36:08.835 +02:00 [INF] 143e7b8f-2235-4dfe-bc12-5d105e386566 Handling GetVideosByChannelQuery
+2026-05-31 04:36:18.453 +02:00 [INF] 143e7b8f-2235-4dfe-bc12-5d105e386566 Handled GetVideosByChannelQuery in 9616ms
+2026-05-31 04:36:18.456 +02:00 [WRN] 143e7b8f-2235-4dfe-bc12-5d105e386566 Slow request detected: GetVideosByChannelQuery took 9616ms
+2026-05-31 04:36:18.464 +02:00 [INF] 143e7b8f-2235-4dfe-bc12-5d105e386566 HTTP GET /api/v1/Discovery/channels/UCO-OdMztI8WPVoz_Dq9n48Q/videos responded 200 in 9907.8605ms
+2026-05-31 04:36:18.471 +02:00 [INF] 143e7b8f-2235-4dfe-bc12-5d105e386566 HTTP GET /api/v1/Discovery/channels/UCO-OdMztI8WPVoz_Dq9n48Q/videos completed with 200 | CorrelationId: 143e7b8f-2235-4dfe-bc12-5d105e386566
+2026-05-31 04:36:18.474 +02:00 [WRN] 143e7b8f-2235-4dfe-bc12-5d105e386566 SLOW REQUEST: GET /api/v1/Discovery/channels/UCO-OdMztI8WPVoz_Dq9n48Q/videos took 9918ms
+2026-05-31 04:42:35.462 +02:00 [INF] 68b3beed-e2b5-4155-b553-8d84e38ab107 HTTP GET /api/v1/Discovery/channels/UC8H8YKUSFLtLxjt49tlyJwA/videos started | CorrelationId: 68b3beed-e2b5-4155-b553-8d84e38ab107
+2026-05-31 04:42:35.467 +02:00 [INF] 68b3beed-e2b5-4155-b553-8d84e38ab107 Handling GetVideosByChannelQuery
+2026-05-31 04:42:37.161 +02:00 [INF] 68b3beed-e2b5-4155-b553-8d84e38ab107 Handled GetVideosByChannelQuery in 1682ms
+2026-05-31 04:42:37.171 +02:00 [INF] 68b3beed-e2b5-4155-b553-8d84e38ab107 HTTP GET /api/v1/Discovery/channels/UC8H8YKUSFLtLxjt49tlyJwA/videos responded 200 in 1706.2012ms
+2026-05-31 04:42:37.212 +02:00 [INF] 68b3beed-e2b5-4155-b553-8d84e38ab107 HTTP GET /api/v1/Discovery/channels/UC8H8YKUSFLtLxjt49tlyJwA/videos completed with 200 | CorrelationId: 68b3beed-e2b5-4155-b553-8d84e38ab107
+2026-05-31 04:46:19.916 +02:00 [INF] 61bd63c2-ec31-4019-8654-789d34726e31 HTTP POST /api/v1/gap-analysis/analyze started | CorrelationId: 61bd63c2-ec31-4019-8654-789d34726e31
+2026-05-31 04:46:20.076 +02:00 [INF] 61bd63c2-ec31-4019-8654-789d34726e31 Handling AnalyzeGapCommand
+2026-05-31 04:46:20.122 +02:00 [INF] 61bd63c2-ec31-4019-8654-789d34726e31 Starting gap analysis for video: UC8H8YKUSFLtLxjt49tlyJwA
+2026-05-31 04:46:20.400 +02:00 [ERR] 61bd63c2-ec31-4019-8654-789d34726e31 Failed executing DbCommand (214ms) [Parameters=[@__request_VideoId_0='?' (Size = 32)], CommandType='"Text"', CommandTimeout='60']
+SELECT [g].[Id], [g].[AudiencePainPointsJson], [g].[ChannelId], [g].[CompetitionDifficulty], [g].[ContentGapsJson], [g].[CreatedAt], [g].[CtrOptimizationSuggestionsJson], [g].[HookImprovementsJson], [g].[IsDeleted], [g].[MissedOpportunitiesJson], [g].[OpportunityScore], [g].[RawAiResponse], [g].[RetentionImprovementsJson], [g].[SeoRecommendationsJson], [g].[Status], [g].[StrengthsJson], [g].[TrendGrowth], [g].[UpdatedAt], [g].[VideoId], [g].[VideoTitle], [g].[ViralPotentialAnalysis], [g].[WeaknessesJson]
+FROM [GapReports] AS [g]
+WHERE [g].[VideoId] = @__request_VideoId_0 AND [g].[IsDeleted] = CAST(0 AS bit)
+2026-05-31 04:46:20.805 +02:00 [ERR] 61bd63c2-ec31-4019-8654-789d34726e31 An exception occurred while iterating over the results of a query for context type 'ContentGapAnalyzer.Infrastructure.Persistence.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'GapReports'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b1e624e1-9728-4541-ab8f-a4513da697fc
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'GapReports'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b1e624e1-9728-4541-ab8f-a4513da697fc
+Error Number:208,State:1,Class:16
+2026-05-31 04:46:21.085 +02:00 [ERR] 61bd63c2-ec31-4019-8654-789d34726e31 HTTP POST /api/v1/gap-analysis/analyze responded 500 in 1164.5439ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'GapReports'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 27
+   at ContentGapAnalyzer.Application.Handlers.AnalyzeGapHandler.Handle(AnalyzeGapCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\AnalyzeGapHandler.cs:line 50
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.GapAnalysisController.Analyze(AnalyzeRequest request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\GapAnalysisController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:b1e624e1-9728-4541-ab8f-a4513da697fc
+Error Number:208,State:1,Class:16
+2026-05-31 04:46:21.467 +02:00 [ERR]  Unhandled exception on POST /api/v1/gap-analysis/analyze
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'GapReports'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 27
+   at ContentGapAnalyzer.Application.Handlers.AnalyzeGapHandler.Handle(AnalyzeGapCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\AnalyzeGapHandler.cs:line 50
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.GapAnalysisController.Analyze(AnalyzeRequest request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\GapAnalysisController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+ClientConnectionId:b1e624e1-9728-4541-ab8f-a4513da697fc
+Error Number:208,State:1,Class:16
+2026-05-31 04:56:47.695 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 04:56:48.583 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125
+2026-05-31 04:58:58.038 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-05-31 04:58:58.313 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 125

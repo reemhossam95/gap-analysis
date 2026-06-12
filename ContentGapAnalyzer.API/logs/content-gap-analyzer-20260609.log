@@ -1,0 +1,385 @@
+2026-06-09 00:43:28.488 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 01:16:31.660 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 01:17:44.648 +02:00 [INF] e739feff-dd23-4df5-962a-4440687f0586 HTTP GET /swagger/index.html started | CorrelationId: e739feff-dd23-4df5-962a-4440687f0586
+2026-06-09 01:17:46.424 +02:00 [INF] e739feff-dd23-4df5-962a-4440687f0586 HTTP GET /swagger/index.html responded 200 in 1548.9789ms
+2026-06-09 01:17:46.493 +02:00 [INF] e739feff-dd23-4df5-962a-4440687f0586 HTTP GET /swagger/index.html completed with 200 | CorrelationId: e739feff-dd23-4df5-962a-4440687f0586
+2026-06-09 01:17:46.661 +02:00 [INF] a0e0fa0f-53e8-41da-b71f-f0c6a162a348 HTTP GET /swagger/v1/swagger.json started | CorrelationId: a0e0fa0f-53e8-41da-b71f-f0c6a162a348
+2026-06-09 01:17:48.564 +02:00 [INF] a0e0fa0f-53e8-41da-b71f-f0c6a162a348 HTTP GET /swagger/v1/swagger.json responded 200 in 1899.7458ms
+2026-06-09 01:17:48.567 +02:00 [INF] a0e0fa0f-53e8-41da-b71f-f0c6a162a348 HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: a0e0fa0f-53e8-41da-b71f-f0c6a162a348
+2026-06-09 01:34:04.558 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 HTTP GET /api/v1/discovery/trending started | CorrelationId: 6ef2b921-54d7-4e7f-8acc-4ef87e367d09
+2026-06-09 01:34:04.649 +02:00 [WRN] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Failed to determine the https port for redirect.
+2026-06-09 01:34:05.969 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Handling FetchTrendingVideosCommand
+2026-06-09 01:34:07.820 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Fetching trending videos from YouTube: region=US, limit=10
+2026-06-09 01:34:07.890 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:34:07.978 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:34:09.528 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 1546.4328ms - 200
+2026-06-09 01:34:09.535 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 End processing HTTP request after 1665.7931ms - 200
+2026-06-09 01:34:12.710 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:12.712 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:13.590 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 876.7821ms - 503
+2026-06-09 01:34:15.603 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:16.695 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 1088.502ms - 503
+2026-06-09 01:34:20.713 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:21.441 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 726.3657ms - 503
+2026-06-09 01:34:29.446 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:30.243 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 793.9247ms - 503
+2026-06-09 01:34:30.245 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 End processing HTTP request after 17535.7214ms - 503
+2026-06-09 01:34:30.250 +02:00 [ERR] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Gemini error: "ServiceUnavailable" - {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+2026-06-09 01:34:30.413 +02:00 [ERR] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Gemini failed to analyze video: LE SSERAFIM (르세라핌) x ILLIT (아일릿) x KATSEYE (캣츠아이) 'ICONIC BY MISTAKE' Official MV Teaser. Returning default metrics.
+System.Net.Http.HttpRequestException: {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+
+   at ContentGapAnalyzer.Infrastructure.Services.GeminiAiService.CallGeminiAsync(String prompt, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Services\GeminiAiService.cs:line 210
+   at ContentGapAnalyzer.Infrastructure.Services.GeminiAiService.AnalyzeVideoMetricsAsync(VideoMetricsInput input, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Services\GeminiAiService.cs:line 61
+2026-06-09 01:34:34.373 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:34.377 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:34:41.273 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 6894.33ms - 200
+2026-06-09 01:34:41.290 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 End processing HTTP request after 6917.0157ms - 200
+2026-06-09 01:34:41.388 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:34:41.390 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:34:46.592 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Received HTTP response headers after 5200.5876ms - 200
+2026-06-09 01:34:46.595 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 End processing HTTP request after 5207.2559ms - 200
+2026-06-09 01:34:47.465 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Handled FetchTrendingVideosCommand in 41470ms
+2026-06-09 01:34:47.470 +02:00 [WRN] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 Slow request detected: FetchTrendingVideosCommand took 41470ms
+2026-06-09 01:34:47.550 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 HTTP GET /api/v1/discovery/trending responded 200 in 42975.6567ms
+2026-06-09 01:34:47.553 +02:00 [INF] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 6ef2b921-54d7-4e7f-8acc-4ef87e367d09
+2026-06-09 01:34:47.554 +02:00 [WRN] 6ef2b921-54d7-4e7f-8acc-4ef87e367d09 SLOW REQUEST: GET /api/v1/discovery/trending took 42996ms
+2026-06-09 01:44:43.114 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 01:44:47.625 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e HTTP GET /api/v1/discovery/trending started | CorrelationId: 19560d8a-7713-405c-89a0-86fd4c6d040e
+2026-06-09 01:44:47.737 +02:00 [WRN] 19560d8a-7713-405c-89a0-86fd4c6d040e Failed to determine the https port for redirect.
+2026-06-09 01:44:47.920 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Handling FetchTrendingVideosCommand
+2026-06-09 01:44:48.192 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Fetching trending videos from YouTube: region=US, limit=10
+2026-06-09 01:44:48.235 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:44:48.256 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:44:48.737 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Received HTTP response headers after 458.2202ms - 200
+2026-06-09 01:44:48.760 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e End processing HTTP request after 527.3627ms - 200
+2026-06-09 01:44:52.155 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Handling AnalyzeSingleVideoCommand
+2026-06-09 01:44:52.226 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:44:52.229 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:44:52.484 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Handled FetchTrendingVideosCommand in 4561ms
+2026-06-09 01:44:52.486 +02:00 [WRN] 19560d8a-7713-405c-89a0-86fd4c6d040e Slow request detected: FetchTrendingVideosCommand took 4561ms
+2026-06-09 01:44:52.548 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e HTTP GET /api/v1/discovery/trending responded 200 in 4879.2236ms
+2026-06-09 01:44:52.556 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 19560d8a-7713-405c-89a0-86fd4c6d040e
+2026-06-09 01:44:52.564 +02:00 [WRN] 19560d8a-7713-405c-89a0-86fd4c6d040e SLOW REQUEST: GET /api/v1/discovery/trending took 4955ms
+2026-06-09 01:45:01.398 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Received HTTP response headers after 9167.0155ms - 200
+2026-06-09 01:45:01.400 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e End processing HTTP request after 9174.5557ms - 200
+2026-06-09 01:45:01.412 +02:00 [INF] 19560d8a-7713-405c-89a0-86fd4c6d040e Handled AnalyzeSingleVideoCommand in 9255ms
+2026-06-09 01:45:01.414 +02:00 [WRN] 19560d8a-7713-405c-89a0-86fd4c6d040e Slow request detected: AnalyzeSingleVideoCommand took 9255ms
+2026-06-09 01:45:01.417 +02:00 [ERR] 19560d8a-7713-405c-89a0-86fd4c6d040e Background analysis failed for video 0MxBFXH2a_U
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'IServiceProvider'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ThrowHelper.ThrowObjectDisposedException()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at MediatR.ServiceFactoryExtensions.GetInstances[T](ServiceFactory factory)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, ServiceFactory serviceFactory, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.<>c__DisplayClass7_0.<<Handle>b__0>d.MoveNext() in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 108
+2026-06-09 01:45:01.463 +02:00 [ERR] 19560d8a-7713-405c-89a0-86fd4c6d040e Background analysis failed for video _BE6aVJgM98
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'IServiceProvider'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ThrowHelper.ThrowObjectDisposedException()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at MediatR.ServiceFactoryExtensions.GetInstances[T](ServiceFactory factory)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, ServiceFactory serviceFactory, CancellationToken cancellationToken)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.<>c__DisplayClass7_0.<<Handle>b__0>d.MoveNext() in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 108
+2026-06-09 01:48:17.697 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 01:48:21.095 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 HTTP GET /api/v1/discovery/trending started | CorrelationId: 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9
+2026-06-09 01:48:21.188 +02:00 [WRN] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Failed to determine the https port for redirect.
+2026-06-09 01:48:21.332 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handling FetchTrendingVideosCommand
+2026-06-09 01:48:21.577 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Fetching trending videos from YouTube: region=US, limit=10
+2026-06-09 01:48:21.599 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:48:21.611 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:48:21.970 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 355.1656ms - 200
+2026-06-09 01:48:21.977 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 End processing HTTP request after 381.1418ms - 200
+2026-06-09 01:48:25.026 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handling AnalyzeSingleVideoCommand
+2026-06-09 01:48:25.154 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:48:25.156 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:48:25.266 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handled FetchTrendingVideosCommand in 3931ms
+2026-06-09 01:48:25.273 +02:00 [WRN] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Slow request detected: FetchTrendingVideosCommand took 3931ms
+2026-06-09 01:48:25.329 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 HTTP GET /api/v1/discovery/trending responded 200 in 4225.4060ms
+2026-06-09 01:48:25.332 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9
+2026-06-09 01:48:25.334 +02:00 [WRN] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 SLOW REQUEST: GET /api/v1/discovery/trending took 4254ms
+2026-06-09 01:48:25.957 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 798.9025ms - 503
+2026-06-09 01:48:27.971 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:48:29.116 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 1140.7379ms - 503
+2026-06-09 01:48:33.130 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:48:33.624 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 484.8207ms - 503
+2026-06-09 01:48:41.631 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:48:48.047 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 6398.6921ms - 200
+2026-06-09 01:48:48.048 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 End processing HTTP request after 22894.176ms - 200
+2026-06-09 01:48:48.060 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handled AnalyzeSingleVideoCommand in 23033ms
+2026-06-09 01:48:48.064 +02:00 [WRN] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Slow request detected: AnalyzeSingleVideoCommand took 23033ms
+2026-06-09 01:48:48.067 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handling AnalyzeSingleVideoCommand
+2026-06-09 01:48:48.078 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:48:48.079 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:48:48.499 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 417.5336ms - 503
+2026-06-09 01:48:50.511 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:48:59.257 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 8744.1946ms - 200
+2026-06-09 01:48:59.259 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 End processing HTTP request after 11180.4765ms - 200
+2026-06-09 01:48:59.261 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handled AnalyzeSingleVideoCommand in 11193ms
+2026-06-09 01:48:59.264 +02:00 [WRN] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Slow request detected: AnalyzeSingleVideoCommand took 11193ms
+2026-06-09 01:48:59.267 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handling AnalyzeSingleVideoCommand
+2026-06-09 01:48:59.277 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCXbm6DP3BBRvOsnjQkcuIFuyl4reGnBi4
+2026-06-09 01:48:59.279 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCXbm6DP3BBRvOsnjQkcuIFuyl4reGnBi4
+2026-06-09 01:49:07.335 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Received HTTP response headers after 8053.7084ms - 200
+2026-06-09 01:49:07.336 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 End processing HTTP request after 8058.9455ms - 200
+2026-06-09 01:49:07.338 +02:00 [INF] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Handled AnalyzeSingleVideoCommand in 8068ms
+2026-06-09 01:49:07.339 +02:00 [WRN] 59c1bf04-de2f-4085-8034-e3b4e5cbd6c9 Slow request detected: AnalyzeSingleVideoCommand took 8068ms
+2026-06-09 01:55:25.621 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae HTTP GET /api/v1/Discovery/trending started | CorrelationId: 462c727f-045d-4de7-a1ee-7c84c7c23bae
+2026-06-09 01:55:25.628 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Handling FetchTrendingVideosCommand
+2026-06-09 01:55:25.633 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Fetching trending videos from YouTube: region=US, limit=2
+2026-06-09 01:55:25.654 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=2&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:55:25.680 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=2&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 01:55:25.947 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Received HTTP response headers after 244.2937ms - 200
+2026-06-09 01:55:25.948 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae End processing HTTP request after 294.0867ms - 200
+2026-06-09 01:55:26.695 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Handling AnalyzeSingleVideoCommand
+2026-06-09 01:55:26.808 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Handled FetchTrendingVideosCommand in 1178ms
+2026-06-09 01:55:26.835 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:55:26.837 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCuEqBA_3C9s-97lh4lxZxSMOk4TfFQ318
+2026-06-09 01:55:26.850 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae HTTP GET /api/v1/Discovery/trending responded 200 in 1227.6324ms
+2026-06-09 01:55:26.853 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae HTTP GET /api/v1/Discovery/trending completed with 200 | CorrelationId: 462c727f-045d-4de7-a1ee-7c84c7c23bae
+2026-06-09 01:55:32.955 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Received HTTP response headers after 6117.3186ms - 200
+2026-06-09 01:55:32.958 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae End processing HTTP request after 6122.5961ms - 200
+2026-06-09 01:55:32.960 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Handled AnalyzeSingleVideoCommand in 6263ms
+2026-06-09 01:55:32.963 +02:00 [WRN] 462c727f-045d-4de7-a1ee-7c84c7c23bae Slow request detected: AnalyzeSingleVideoCommand took 6263ms
+2026-06-09 01:55:32.965 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Handling AnalyzeSingleVideoCommand
+2026-06-09 01:55:32.970 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:55:32.972 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDiV6IS8eZ4VdhxUqwwWx38fMw1l439z6A
+2026-06-09 01:55:43.941 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Received HTTP response headers after 10966.5833ms - 200
+2026-06-09 01:55:43.943 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae End processing HTTP request after 10973.3681ms - 200
+2026-06-09 01:55:43.946 +02:00 [INF] 462c727f-045d-4de7-a1ee-7c84c7c23bae Handled AnalyzeSingleVideoCommand in 10978ms
+2026-06-09 01:55:43.953 +02:00 [WRN] 462c727f-045d-4de7-a1ee-7c84c7c23bae Slow request detected: AnalyzeSingleVideoCommand took 10978ms
+2026-06-09 02:06:48.676 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 02:06:49.605 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 135
+2026-06-09 02:07:58.455 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 02:07:58.660 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 135
+2026-06-09 02:18:19.031 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 02:18:19.239 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 135
+2026-06-09 02:23:08.932 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 02:23:09.143 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 135
+2026-06-09 03:15:01.334 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 03:16:18.620 +02:00 [INF] 58836c61-d325-41ed-8b6d-006f0f26c4fb HTTP GET /api/v1/discovery/trending started | CorrelationId: 58836c61-d325-41ed-8b6d-006f0f26c4fb
+2026-06-09 03:16:21.041 +02:00 [WRN] 58836c61-d325-41ed-8b6d-006f0f26c4fb Failed to determine the https port for redirect.
+2026-06-09 03:16:22.740 +02:00 [INF] 58836c61-d325-41ed-8b6d-006f0f26c4fb Handling FetchTrendingVideosCommand
+2026-06-09 03:16:27.692 +02:00 [INF] 58836c61-d325-41ed-8b6d-006f0f26c4fb Fetching trending videos from YouTube: region=US, limit=10
+2026-06-09 03:16:27.836 +02:00 [INF] 58836c61-d325-41ed-8b6d-006f0f26c4fb Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 03:16:28.484 +02:00 [ERR] 58836c61-d325-41ed-8b6d-006f0f26c4fb HTTP GET /api/v1/discovery/trending responded 500 in 9787.1322ms
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, CancellationToken cancellationToken, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy`1.ExecuteInternalAsync(Func`3 action, Context context, Boolean continueOnCapturedContext, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Services.YouTubeService.GetTrendingVideosAsync(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Services\YouTubeService.cs:line 50
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 48
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 03:16:31.248 +02:00 [ERR]  Unhandled exception on GET /api/v1/discovery/trending
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, CancellationToken cancellationToken, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy`1.ExecuteInternalAsync(Func`3 action, Context context, Boolean continueOnCapturedContext, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Services.YouTubeService.GetTrendingVideosAsync(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Services\YouTubeService.cs:line 50
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 48
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+2026-06-09 19:42:54.756 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-09 19:50:31.761 +02:00 [INF] 9d6c08e9-90a6-42b2-af0d-1def665e7f1e HTTP OPTIONS /high-growth-topics started | CorrelationId: 9d6c08e9-90a6-42b2-af0d-1def665e7f1e
+2026-06-09 19:50:45.969 +02:00 [WRN] 9d6c08e9-90a6-42b2-af0d-1def665e7f1e Failed to determine the https port for redirect.
+2026-06-09 19:50:46.313 +02:00 [INF] 9d6c08e9-90a6-42b2-af0d-1def665e7f1e HTTP OPTIONS /high-growth-topics responded 204 in 14161.2954ms
+2026-06-09 19:50:46.396 +02:00 [INF] 9d6c08e9-90a6-42b2-af0d-1def665e7f1e HTTP OPTIONS /high-growth-topics completed with 204 | CorrelationId: 9d6c08e9-90a6-42b2-af0d-1def665e7f1e
+2026-06-09 19:50:46.423 +02:00 [WRN] 9d6c08e9-90a6-42b2-af0d-1def665e7f1e SLOW REQUEST: OPTIONS /high-growth-topics took 14954ms
+2026-06-09 19:51:40.543 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab HTTP GET /api/v1/discovery/trending started | CorrelationId: c8fa3378-4835-4245-bcfa-ae319d43d8ab
+2026-06-09 19:51:41.360 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab Handling FetchTrendingVideosCommand
+2026-06-09 19:51:45.637 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab Fetching trending videos from YouTube: region=US, limit=10
+2026-06-09 19:51:45.717 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 19:51:45.826 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-09 19:51:46.738 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab Received HTTP response headers after 908.5078ms - 200
+2026-06-09 19:51:46.789 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab End processing HTTP request after 1087.3012ms - 200
+2026-06-09 19:52:01.795 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab Handled FetchTrendingVideosCommand in 20404ms
+2026-06-09 19:52:01.797 +02:00 [WRN] c8fa3378-4835-4245-bcfa-ae319d43d8ab Slow request detected: FetchTrendingVideosCommand took 20404ms
+2026-06-09 19:52:02.743 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab HTTP GET /api/v1/discovery/trending responded 200 in 22197.9289ms
+2026-06-09 19:52:02.813 +02:00 [INF] c8fa3378-4835-4245-bcfa-ae319d43d8ab HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: c8fa3378-4835-4245-bcfa-ae319d43d8ab
+2026-06-09 19:52:02.817 +02:00 [WRN] c8fa3378-4835-4245-bcfa-ae319d43d8ab SLOW REQUEST: GET /api/v1/discovery/trending took 22273ms
+2026-06-09 19:52:04.811 +02:00 [INF] a1cae56f-e5c4-4c37-8923-6089ee576168 HTTP GET /api/v1/discovery/trending started | CorrelationId: a1cae56f-e5c4-4c37-8923-6089ee576168
+2026-06-09 19:52:04.818 +02:00 [INF] a1cae56f-e5c4-4c37-8923-6089ee576168 Handling FetchTrendingVideosCommand
+2026-06-09 19:52:04.820 +02:00 [INF] a1cae56f-e5c4-4c37-8923-6089ee576168 Cache hit for trending videos key: trending:US:::20
+2026-06-09 19:52:04.821 +02:00 [INF] a1cae56f-e5c4-4c37-8923-6089ee576168 Handled FetchTrendingVideosCommand in 2ms
+2026-06-09 19:52:04.824 +02:00 [INF] a1cae56f-e5c4-4c37-8923-6089ee576168 HTTP GET /api/v1/discovery/trending responded 200 in 10.0523ms
+2026-06-09 19:52:04.825 +02:00 [INF] a1cae56f-e5c4-4c37-8923-6089ee576168 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: a1cae56f-e5c4-4c37-8923-6089ee576168
+2026-06-09 23:00:40.790 +02:00 [INF] 57058b5c-859c-48ac-86cf-6022b3e770fd HTTP GET /api/v1/discovery/trending started | CorrelationId: 57058b5c-859c-48ac-86cf-6022b3e770fd
+2026-06-09 23:00:44.398 +02:00 [INF] 57058b5c-859c-48ac-86cf-6022b3e770fd Handling FetchTrendingVideosCommand
+2026-06-09 23:00:46.162 +02:00 [ERR] 57058b5c-859c-48ac-86cf-6022b3e770fd HTTP GET /api/v1/discovery/trending responded 500 in 3824.0681ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at FluentValidation.AbstractValidator`1.ValidateInternalAsync(ValidationContext`1 context, Boolean useAsync, CancellationToken cancellation) in /_/src/FluentValidation/AbstractValidator.cs:line 243
+   at FluentValidation.AbstractValidator`1.ValidateAsync(ValidationContext`1 context, CancellationToken cancellation) in /_/src/FluentValidation/AbstractValidator.cs:line 220
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 29
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-09 23:00:49.168 +02:00 [ERR]  Unhandled exception on GET /api/v1/discovery/trending
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at FluentValidation.AbstractValidator`1.ValidateInternalAsync(ValidationContext`1 context, Boolean useAsync, CancellationToken cancellation) in /_/src/FluentValidation/AbstractValidator.cs:line 243
+   at FluentValidation.AbstractValidator`1.ValidateAsync(ValidationContext`1 context, CancellationToken cancellation) in /_/src/FluentValidation/AbstractValidator.cs:line 220
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 29
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+2026-06-09 23:08:13.138 +02:00 [INF]  Starting Content Gap Analyzer API

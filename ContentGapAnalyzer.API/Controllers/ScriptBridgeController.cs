@@ -1,0 +1,100 @@
+using Asp.Versioning;
+using ContentGapAnalyzer.Application.Commands;
+using ContentGapAnalyzer.Application.Common;
+using ContentGapAnalyzer.Application.DTOs;
+using ContentGapAnalyzer.Application.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
+
+namespace ContentGapAnalyzer.API.Controllers;
+
+/// <summary>
+/// Script Bridge Engine — stores and retrieves analysis session context
+/// for integration with the future AI Script Generator.
+/// </summary>
+[ApiController]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/script-bridge")]
+[EnableRateLimiting("fixed")]
+public class ScriptBridgeController : ControllerBase
+{
+    private readonly IMediator _mediator;
+
+    public ScriptBridgeController(IMediator mediator) => _mediator = mediator;
+
+    /// <summary>
+    /// Save an analysis session with gap report context for later script generation.
+    /// </summary>
+    /// <param name="request">Session details including report ID, video ID, notes, and context JSON.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    [HttpPost("sessions")]
+    [ProducesResponseType(typeof(ApiResponse<AnalysisSessionDto>), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> SaveSession(
+        [FromBody] SaveSessionRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var command = new SaveAnalysisSessionCommand(
+            request.GapReportId,
+            request.VideoId,
+            request.Notes ?? string.Empty,
+            request.ContextJson ?? "{}");
+
+        var result = await _mediator.Send(command, cancellationToken);
+
+        if (!result.Success)
+            return result.Message.Contains("not found", StringComparison.OrdinalIgnoreCase)
+                ? NotFound(result)
+                : BadRequest(result);
+
+        return CreatedAtAction(
+            nameof(GetSessionById),
+            new { sessionId = result.Data!.SessionId },
+            result);
+    }
+
+    /// <summary>
+    /// Get all sessions for a specific gap report.
+    /// </summary>
+    /// <param name="gapReportId">Gap report database ID.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    [HttpGet("sessions/report/{gapReportId:int}")]
+    [ProducesResponseType(typeof(ApiResponse<IReadOnlyList<AnalysisSessionDto>>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetSessionsByReport(
+        [FromRoute] int gapReportId,
+        CancellationToken cancellationToken = default)
+    {
+        var query = new GetAnalysisSessionsByReportQuery(gapReportId);
+        var result = await _mediator.Send(query, cancellationToken);
+
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
+
+    /// <summary>
+    /// Get a specific analysis session by its GUID.
+    /// </summary>
+    /// <param name="sessionId">Session GUID.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    [HttpGet("sessions/{sessionId:guid}")]
+    [ProducesResponseType(typeof(ApiResponse<AnalysisSessionDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetSessionById(
+        [FromRoute] Guid sessionId,
+        CancellationToken cancellationToken = default)
+    {
+        var query = new GetSessionByIdQuery(sessionId);
+        var result = await _mediator.Send(query, cancellationToken);
+
+        return result.Success ? Ok(result) : NotFound(result);
+    }
+}
+
+/// <summary>Request model for saving an analysis session.</summary>
+public record SaveSessionRequest(
+    int GapReportId,
+    string VideoId,
+    string? Notes,
+    string? ContextJson);

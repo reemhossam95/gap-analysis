@@ -1,0 +1,16 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+ContentGapAnalyzer.API/bin/
+ContentGapAnalyzer.API/obj/
+ContentGapAnalyzer.Application/bin/
+ContentGapAnalyzer.Application/obj/
+ContentGapAnalyzer.Domain/bin/
+ContentGapAnalyzer.Domain/obj/
+ContentGapAnalyzer.Infrastructure/bin/
+ContentGapAnalyzer.Infrastructure/obj/
+
+appsettings.Development.json

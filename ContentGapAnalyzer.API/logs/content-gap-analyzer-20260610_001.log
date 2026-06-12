@@ -1,0 +1,519 @@
+2026-06-10 01:29:11.776 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-10 01:29:14.044 +02:00 [ERR]  Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-06-10 01:29:15.215 +02:00 [FTL]  Content Gap Analyzer API terminated unexpectedly
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Program.<Main>$(String[] args) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Program.cs:line 162
+2026-06-10 01:31:54.424 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-10 01:57:07.980 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c HTTP GET /api/v1/discovery/trending started | CorrelationId: 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c
+2026-06-10 01:57:08.721 +02:00 [WRN] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Failed to determine the https port for redirect.
+2026-06-10 01:57:09.540 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Handling FetchTrendingVideosCommand
+2026-06-10 01:57:11.570 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 01:57:11.663 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 01:57:11.801 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 01:57:12.729 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Received HTTP response headers after 924.8763ms - 200
+2026-06-10 01:57:12.758 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c End processing HTTP request after 1106.8656ms - 200
+2026-06-10 01:57:33.778 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Handled FetchTrendingVideosCommand in 24175ms
+2026-06-10 01:57:33.780 +02:00 [WRN] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c Slow request detected: FetchTrendingVideosCommand took 24175ms
+2026-06-10 01:57:35.147 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c HTTP GET /api/v1/discovery/trending responded 200 in 27076.2970ms
+2026-06-10 01:57:35.195 +02:00 [INF] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c
+2026-06-10 01:57:35.203 +02:00 [WRN] 120e60ac-bfd1-4436-a1d5-4cb9e7b4253c SLOW REQUEST: GET /api/v1/discovery/trending took 27259ms
+2026-06-10 01:59:00.079 +02:00 [INF] d9b4125a-0efc-4412-8786-1014e68651e8 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: d9b4125a-0efc-4412-8786-1014e68651e8
+2026-06-10 01:59:00.232 +02:00 [INF] d9b4125a-0efc-4412-8786-1014e68651e8 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 149.7328ms
+2026-06-10 01:59:00.233 +02:00 [INF] d9b4125a-0efc-4412-8786-1014e68651e8 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: d9b4125a-0efc-4412-8786-1014e68651e8
+2026-06-10 01:59:00.576 +02:00 [INF] 991522b6-7839-435c-a137-b28c0745e6ed HTTP GET /api/v1/discovery/trending started | CorrelationId: 991522b6-7839-435c-a137-b28c0745e6ed
+2026-06-10 01:59:00.583 +02:00 [INF] 991522b6-7839-435c-a137-b28c0745e6ed Handling FetchTrendingVideosCommand
+2026-06-10 01:59:00.586 +02:00 [INF] 991522b6-7839-435c-a137-b28c0745e6ed Cache hit for trending videos key: trending:US:::20
+2026-06-10 01:59:00.588 +02:00 [INF] 991522b6-7839-435c-a137-b28c0745e6ed Handled FetchTrendingVideosCommand in 4ms
+2026-06-10 01:59:00.590 +02:00 [INF] 991522b6-7839-435c-a137-b28c0745e6ed HTTP GET /api/v1/discovery/trending responded 200 in 11.6872ms
+2026-06-10 01:59:00.591 +02:00 [INF] 991522b6-7839-435c-a137-b28c0745e6ed HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 991522b6-7839-435c-a137-b28c0745e6ed
+2026-06-10 01:59:24.511 +02:00 [INF] aab9b0ae-97fa-4c4e-9428-008638d7c3b0 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: aab9b0ae-97fa-4c4e-9428-008638d7c3b0
+2026-06-10 01:59:24.515 +02:00 [INF] aab9b0ae-97fa-4c4e-9428-008638d7c3b0 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.1535ms
+2026-06-10 01:59:24.517 +02:00 [INF] aab9b0ae-97fa-4c4e-9428-008638d7c3b0 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: aab9b0ae-97fa-4c4e-9428-008638d7c3b0
+2026-06-10 01:59:24.519 +02:00 [INF] d1297432-15d2-4e78-8d7d-3a96e828b733 HTTP GET /api/v1/discovery/trending started | CorrelationId: d1297432-15d2-4e78-8d7d-3a96e828b733
+2026-06-10 01:59:24.559 +02:00 [INF] d1297432-15d2-4e78-8d7d-3a96e828b733 Handling FetchTrendingVideosCommand
+2026-06-10 01:59:24.563 +02:00 [INF] d1297432-15d2-4e78-8d7d-3a96e828b733 Cache hit for trending videos key: trending:US:::20
+2026-06-10 01:59:24.564 +02:00 [INF] d1297432-15d2-4e78-8d7d-3a96e828b733 Handled FetchTrendingVideosCommand in 3ms
+2026-06-10 01:59:24.579 +02:00 [INF] d1297432-15d2-4e78-8d7d-3a96e828b733 HTTP GET /api/v1/discovery/trending responded 200 in 58.6457ms
+2026-06-10 01:59:24.584 +02:00 [INF] d1297432-15d2-4e78-8d7d-3a96e828b733 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: d1297432-15d2-4e78-8d7d-3a96e828b733
+2026-06-10 01:59:26.864 +02:00 [INF] 7dafb9a4-8bad-48c3-a985-23afc870b844 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 7dafb9a4-8bad-48c3-a985-23afc870b844
+2026-06-10 01:59:26.867 +02:00 [INF] 7dafb9a4-8bad-48c3-a985-23afc870b844 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.0910ms
+2026-06-10 01:59:26.869 +02:00 [INF] 7dafb9a4-8bad-48c3-a985-23afc870b844 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 7dafb9a4-8bad-48c3-a985-23afc870b844
+2026-06-10 01:59:26.923 +02:00 [INF] e28db552-6550-43fc-9e6c-0debb666ae79 HTTP GET /api/v1/discovery/trending started | CorrelationId: e28db552-6550-43fc-9e6c-0debb666ae79
+2026-06-10 01:59:26.927 +02:00 [INF] e28db552-6550-43fc-9e6c-0debb666ae79 Handling FetchTrendingVideosCommand
+2026-06-10 01:59:26.928 +02:00 [INF] e28db552-6550-43fc-9e6c-0debb666ae79 Cache hit for trending videos key: trending:US:::20
+2026-06-10 01:59:26.929 +02:00 [INF] e28db552-6550-43fc-9e6c-0debb666ae79 Handled FetchTrendingVideosCommand in 1ms
+2026-06-10 01:59:26.930 +02:00 [INF] e28db552-6550-43fc-9e6c-0debb666ae79 HTTP GET /api/v1/discovery/trending responded 200 in 4.0582ms
+2026-06-10 01:59:26.932 +02:00 [INF] e28db552-6550-43fc-9e6c-0debb666ae79 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: e28db552-6550-43fc-9e6c-0debb666ae79
+2026-06-10 03:05:26.308 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-10 03:06:58.692 +02:00 [INF] 8ffd73cf-880b-40b2-b65c-bde8f329172d HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 8ffd73cf-880b-40b2-b65c-bde8f329172d
+2026-06-10 03:07:07.269 +02:00 [WRN] 8ffd73cf-880b-40b2-b65c-bde8f329172d Failed to determine the https port for redirect.
+2026-06-10 03:07:07.469 +02:00 [INF] 8ffd73cf-880b-40b2-b65c-bde8f329172d HTTP OPTIONS /api/v1/discovery/trending responded 204 in 8506.4602ms
+2026-06-10 03:07:07.581 +02:00 [INF] 8ffd73cf-880b-40b2-b65c-bde8f329172d HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 8ffd73cf-880b-40b2-b65c-bde8f329172d
+2026-06-10 03:07:07.585 +02:00 [WRN] 8ffd73cf-880b-40b2-b65c-bde8f329172d SLOW REQUEST: OPTIONS /api/v1/discovery/trending took 9148ms
+2026-06-10 03:07:08.214 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 HTTP GET /api/v1/discovery/trending started | CorrelationId: 25aeaba5-318d-4ffe-b45b-fb00167d2880
+2026-06-10 03:07:11.035 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 Handling FetchTrendingVideosCommand
+2026-06-10 03:07:12.958 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 03:07:13.026 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:07:13.180 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:07:14.342 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 Received HTTP response headers after 1157.7697ms - 200
+2026-06-10 03:07:14.375 +02:00 [INF] 25aeaba5-318d-4ffe-b45b-fb00167d2880 End processing HTTP request after 1378.4306ms - 200
+2026-06-10 03:07:23.694 +02:00 [ERR] 25aeaba5-318d-4ffe-b45b-fb00167d2880 An error occurred using the connection to database 'AutotubeDB' on server '.\SQLEXPRESS'.
+2026-06-10 03:07:23.771 +02:00 [ERR] 25aeaba5-318d-4ffe-b45b-fb00167d2880 HTTP GET /api/v1/discovery/trending responded 500 in 15554.6885ms
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 31
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 59
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-10 03:07:24.156 +02:00 [INF] c506fc1b-3eca-454c-ac9e-e64cdd296987 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: c506fc1b-3eca-454c-ac9e-e64cdd296987
+2026-06-10 03:07:24.331 +02:00 [INF] c506fc1b-3eca-454c-ac9e-e64cdd296987 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 1.0305ms
+2026-06-10 03:07:24.333 +02:00 [INF] c506fc1b-3eca-454c-ac9e-e64cdd296987 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: c506fc1b-3eca-454c-ac9e-e64cdd296987
+2026-06-10 03:07:24.336 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c HTTP GET /api/v1/discovery/trending started | CorrelationId: a42b888a-4f1e-4bf0-b743-8f3c970bc38c
+2026-06-10 03:07:24.513 +02:00 [INF]  Request was cancelled by the client: GET /api/v1/discovery/trending
+2026-06-10 03:07:24.534 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c Handling FetchTrendingVideosCommand
+2026-06-10 03:07:24.538 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 03:07:24.539 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:07:24.540 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:07:24.643 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c Received HTTP response headers after 102.418ms - 200
+2026-06-10 03:07:24.644 +02:00 [INF] a42b888a-4f1e-4bf0-b743-8f3c970bc38c End processing HTTP request after 105.4425ms - 200
+2026-06-10 03:07:41.314 +02:00 [ERR] a42b888a-4f1e-4bf0-b743-8f3c970bc38c An error occurred using the connection to database 'AutotubeDB' on server '.\SQLEXPRESS'.
+2026-06-10 03:07:41.411 +02:00 [ERR] a42b888a-4f1e-4bf0-b743-8f3c970bc38c An exception occurred while iterating over the results of a query for context type 'ContentGapAnalyzer.Infrastructure.Persistence.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=2698; handshake=163; [Login] initialization=12; authentication=94; [Post-Login] complete=12082; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f30552cf-2799-4404-8bf1-008cd5e66522
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=2698; handshake=163; [Login] initialization=12; authentication=94; [Post-Login] complete=12082; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f30552cf-2799-4404-8bf1-008cd5e66522
+Error Number:-2,State:0,Class:11
+2026-06-10 03:07:41.460 +02:00 [ERR] a42b888a-4f1e-4bf0-b743-8f3c970bc38c HTTP GET /api/v1/discovery/trending responded 500 in 17120.4509ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=2698; handshake=163; [Login] initialization=12; authentication=94; [Post-Login] complete=12082; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 31
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 59
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:f30552cf-2799-4404-8bf1-008cd5e66522
+Error Number:-2,State:0,Class:11
+2026-06-10 03:07:41.601 +02:00 [ERR]  Unhandled exception on GET /api/v1/discovery/trending
+Microsoft.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=2698; handshake=163; [Login] initialization=12; authentication=94; [Post-Login] complete=12082; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.Infrastructure.Persistence.Repositories.Repository`1.FindAsync(Expression`1 predicate, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Infrastructure\Persistence\Repositories\Repository.cs:line 31
+   at ContentGapAnalyzer.Application.Handlers.FetchTrendingVideosHandler.Handle(FetchTrendingVideosCommand request, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Handlers\FetchTrendingVideosHandler.cs:line 59
+   at ContentGapAnalyzer.Application.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 38
+   at ContentGapAnalyzer.Application.Behaviors.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.Application\Behaviors\PipelineBehaviors.cs:line 63
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ContentGapAnalyzer.API.Controllers.DiscoveryController.GetTrendingVideos(String region, String categoryId, String keywords, Int32 maxResults, CancellationToken cancellationToken) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Controllers\DiscoveryController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at ContentGapAnalyzer.API.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 49
+   at ContentGapAnalyzer.API.Middleware.PerformanceLoggingMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 75
+   at ContentGapAnalyzer.API.Middleware.CorrelationIdMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\RequestMiddlewares.cs:line 23
+   at ContentGapAnalyzer.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hossam\Downloads\gap back\ContentGapAnalyzer\ContentGapAnalyzer.API\Middleware\GlobalExceptionMiddleware.cs:line 23
+ClientConnectionId:f30552cf-2799-4404-8bf1-008cd5e66522
+Error Number:-2,State:0,Class:11
+2026-06-10 03:07:52.885 +02:00 [INF] f4a82e3a-879c-41f0-a66b-a2833c333486 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: f4a82e3a-879c-41f0-a66b-a2833c333486
+2026-06-10 03:07:52.889 +02:00 [INF] f4a82e3a-879c-41f0-a66b-a2833c333486 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.2815ms
+2026-06-10 03:07:52.898 +02:00 [INF] f4a82e3a-879c-41f0-a66b-a2833c333486 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: f4a82e3a-879c-41f0-a66b-a2833c333486
+2026-06-10 03:07:52.993 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 HTTP GET /api/v1/discovery/trending started | CorrelationId: 1d942a2a-ac0a-493d-b7b1-5ff02c46f304
+2026-06-10 03:07:53.001 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Handling FetchTrendingVideosCommand
+2026-06-10 03:07:53.008 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 03:07:53.013 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:07:53.019 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:07:53.155 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Received HTTP response headers after 131.8405ms - 200
+2026-06-10 03:07:53.158 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 End processing HTTP request after 144.918ms - 200
+2026-06-10 03:08:02.165 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Handled FetchTrendingVideosCommand in 9160ms
+2026-06-10 03:08:02.169 +02:00 [WRN] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 Slow request detected: FetchTrendingVideosCommand took 9160ms
+2026-06-10 03:08:02.355 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 HTTP GET /api/v1/discovery/trending responded 200 in 9357.2637ms
+2026-06-10 03:08:02.358 +02:00 [INF] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 1d942a2a-ac0a-493d-b7b1-5ff02c46f304
+2026-06-10 03:08:02.360 +02:00 [WRN] 1d942a2a-ac0a-493d-b7b1-5ff02c46f304 SLOW REQUEST: GET /api/v1/discovery/trending took 9367ms
+2026-06-10 03:08:25.477 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-10 03:08:29.752 +02:00 [INF] 982362c1-76c4-486a-8fe6-5a1d596a9410 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 982362c1-76c4-486a-8fe6-5a1d596a9410
+2026-06-10 03:08:29.814 +02:00 [WRN] 982362c1-76c4-486a-8fe6-5a1d596a9410 Failed to determine the https port for redirect.
+2026-06-10 03:08:29.836 +02:00 [INF] 982362c1-76c4-486a-8fe6-5a1d596a9410 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 74.7985ms
+2026-06-10 03:08:29.903 +02:00 [INF] 982362c1-76c4-486a-8fe6-5a1d596a9410 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 982362c1-76c4-486a-8fe6-5a1d596a9410
+2026-06-10 03:08:29.999 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f HTTP GET /api/v1/discovery/trending started | CorrelationId: 78698468-cd34-4855-836d-b2597ae8623f
+2026-06-10 03:08:30.124 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f Handling FetchTrendingVideosCommand
+2026-06-10 03:08:30.259 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 03:08:30.268 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:08:30.286 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:08:30.718 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f Received HTTP response headers after 346.7974ms - 200
+2026-06-10 03:08:30.725 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f End processing HTTP request after 461.2251ms - 200
+2026-06-10 03:08:34.104 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f Handled FetchTrendingVideosCommand in 3977ms
+2026-06-10 03:08:34.106 +02:00 [WRN] 78698468-cd34-4855-836d-b2597ae8623f Slow request detected: FetchTrendingVideosCommand took 3977ms
+2026-06-10 03:08:34.134 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f HTTP GET /api/v1/discovery/trending responded 200 in 4116.7957ms
+2026-06-10 03:08:34.137 +02:00 [INF] 78698468-cd34-4855-836d-b2597ae8623f HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 78698468-cd34-4855-836d-b2597ae8623f
+2026-06-10 03:08:34.140 +02:00 [WRN] 78698468-cd34-4855-836d-b2597ae8623f SLOW REQUEST: GET /api/v1/discovery/trending took 4140ms
+2026-06-10 03:11:47.210 +02:00 [INF] 6bed3e8e-b119-4a44-8877-4f32779089bf HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 6bed3e8e-b119-4a44-8877-4f32779089bf
+2026-06-10 03:11:47.215 +02:00 [INF] 6bed3e8e-b119-4a44-8877-4f32779089bf HTTP OPTIONS /api/v1/discovery/trending responded 204 in 1.1708ms
+2026-06-10 03:11:47.221 +02:00 [INF] 6bed3e8e-b119-4a44-8877-4f32779089bf HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 6bed3e8e-b119-4a44-8877-4f32779089bf
+2026-06-10 03:11:47.267 +02:00 [INF] cf5833fc-39ba-4798-8f8f-7e2f315be7f5 HTTP GET /api/v1/discovery/trending started | CorrelationId: cf5833fc-39ba-4798-8f8f-7e2f315be7f5
+2026-06-10 03:11:47.273 +02:00 [INF] cf5833fc-39ba-4798-8f8f-7e2f315be7f5 Handling FetchTrendingVideosCommand
+2026-06-10 03:11:47.303 +02:00 [INF] cf5833fc-39ba-4798-8f8f-7e2f315be7f5 Cache hit for trending videos key: trending:US:::20
+2026-06-10 03:11:47.325 +02:00 [INF] cf5833fc-39ba-4798-8f8f-7e2f315be7f5 Handled FetchTrendingVideosCommand in 50ms
+2026-06-10 03:11:47.328 +02:00 [INF] cf5833fc-39ba-4798-8f8f-7e2f315be7f5 HTTP GET /api/v1/discovery/trending responded 200 in 58.5101ms
+2026-06-10 03:11:47.330 +02:00 [INF] cf5833fc-39ba-4798-8f8f-7e2f315be7f5 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: cf5833fc-39ba-4798-8f8f-7e2f315be7f5
+2026-06-10 03:12:00.217 +02:00 [INF] 09949cdd-d3a0-411c-8db9-9239ac8b224b HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 09949cdd-d3a0-411c-8db9-9239ac8b224b
+2026-06-10 03:12:00.219 +02:00 [INF] 09949cdd-d3a0-411c-8db9-9239ac8b224b HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.0876ms
+2026-06-10 03:12:00.220 +02:00 [INF] 09949cdd-d3a0-411c-8db9-9239ac8b224b HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 09949cdd-d3a0-411c-8db9-9239ac8b224b
+2026-06-10 03:12:00.251 +02:00 [INF] 21e3975d-99a2-4b28-9261-47bbec6b62a6 HTTP GET /api/v1/discovery/trending started | CorrelationId: 21e3975d-99a2-4b28-9261-47bbec6b62a6
+2026-06-10 03:12:00.267 +02:00 [INF] 21e3975d-99a2-4b28-9261-47bbec6b62a6 Handling FetchTrendingVideosCommand
+2026-06-10 03:12:00.276 +02:00 [INF] 21e3975d-99a2-4b28-9261-47bbec6b62a6 Cache hit for trending videos key: trending:US:::20
+2026-06-10 03:12:00.280 +02:00 [INF] 21e3975d-99a2-4b28-9261-47bbec6b62a6 Handled FetchTrendingVideosCommand in 12ms
+2026-06-10 03:12:00.281 +02:00 [INF] 21e3975d-99a2-4b28-9261-47bbec6b62a6 HTTP GET /api/v1/discovery/trending responded 200 in 17.0389ms
+2026-06-10 03:12:00.284 +02:00 [INF] 21e3975d-99a2-4b28-9261-47bbec6b62a6 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 21e3975d-99a2-4b28-9261-47bbec6b62a6
+2026-06-10 03:24:44.088 +02:00 [INF] 43f5ac42-8ca0-4c3a-a7a4-c6b0cb15eda3 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 43f5ac42-8ca0-4c3a-a7a4-c6b0cb15eda3
+2026-06-10 03:24:44.092 +02:00 [INF] 43f5ac42-8ca0-4c3a-a7a4-c6b0cb15eda3 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.1181ms
+2026-06-10 03:24:44.094 +02:00 [INF] 43f5ac42-8ca0-4c3a-a7a4-c6b0cb15eda3 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 43f5ac42-8ca0-4c3a-a7a4-c6b0cb15eda3
+2026-06-10 03:24:44.099 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 HTTP GET /api/v1/discovery/trending started | CorrelationId: 19fab6be-cb4e-4b19-9cac-9c278dcb7b98
+2026-06-10 03:24:44.103 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 Handling FetchTrendingVideosCommand
+2026-06-10 03:24:44.132 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 03:24:44.162 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:24:44.163 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:24:44.476 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 Received HTTP response headers after 312.0303ms - 200
+2026-06-10 03:24:44.477 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 End processing HTTP request after 315.1321ms - 200
+2026-06-10 03:24:46.732 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 Handled FetchTrendingVideosCommand in 2628ms
+2026-06-10 03:24:46.734 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 HTTP GET /api/v1/discovery/trending responded 200 in 2631.4193ms
+2026-06-10 03:24:46.737 +02:00 [INF] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 19fab6be-cb4e-4b19-9cac-9c278dcb7b98
+2026-06-10 03:24:46.741 +02:00 [WRN] 19fab6be-cb4e-4b19-9cac-9c278dcb7b98 SLOW REQUEST: GET /api/v1/discovery/trending took 2641ms
+2026-06-10 03:25:58.482 +02:00 [INF] 492769a3-0404-453b-b6b2-68518f6e3e7a HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 492769a3-0404-453b-b6b2-68518f6e3e7a
+2026-06-10 03:25:58.521 +02:00 [INF] 492769a3-0404-453b-b6b2-68518f6e3e7a HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.6754ms
+2026-06-10 03:25:58.549 +02:00 [INF] 492769a3-0404-453b-b6b2-68518f6e3e7a HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 492769a3-0404-453b-b6b2-68518f6e3e7a
+2026-06-10 03:25:58.582 +02:00 [INF] 73f8d4c2-d677-4697-84d6-57aafce7ed94 HTTP GET /api/v1/discovery/trending started | CorrelationId: 73f8d4c2-d677-4697-84d6-57aafce7ed94
+2026-06-10 03:25:58.674 +02:00 [INF] 73f8d4c2-d677-4697-84d6-57aafce7ed94 Handling FetchTrendingVideosCommand
+2026-06-10 03:25:58.675 +02:00 [INF] 73f8d4c2-d677-4697-84d6-57aafce7ed94 Cache hit for trending videos key: trending:US:::20
+2026-06-10 03:25:58.676 +02:00 [INF] 73f8d4c2-d677-4697-84d6-57aafce7ed94 Handled FetchTrendingVideosCommand in 1ms
+2026-06-10 03:25:58.677 +02:00 [INF] 73f8d4c2-d677-4697-84d6-57aafce7ed94 HTTP GET /api/v1/discovery/trending responded 200 in 4.2549ms
+2026-06-10 03:25:58.679 +02:00 [INF] 73f8d4c2-d677-4697-84d6-57aafce7ed94 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 73f8d4c2-d677-4697-84d6-57aafce7ed94
+2026-06-10 03:38:30.554 +02:00 [INF] 6799207b-f1bf-4fbd-bfb0-82a49cc8fcb9 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 6799207b-f1bf-4fbd-bfb0-82a49cc8fcb9
+2026-06-10 03:38:30.555 +02:00 [INF] 6799207b-f1bf-4fbd-bfb0-82a49cc8fcb9 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.1060ms
+2026-06-10 03:38:30.557 +02:00 [INF] 6799207b-f1bf-4fbd-bfb0-82a49cc8fcb9 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 6799207b-f1bf-4fbd-bfb0-82a49cc8fcb9
+2026-06-10 03:38:30.570 +02:00 [INF] d499e4cf-ae24-4515-bcc1-7d044d4432ae HTTP GET /api/v1/discovery/trending started | CorrelationId: d499e4cf-ae24-4515-bcc1-7d044d4432ae
+2026-06-10 03:38:30.605 +02:00 [INF] d499e4cf-ae24-4515-bcc1-7d044d4432ae Handling FetchTrendingVideosCommand
+2026-06-10 03:38:30.614 +02:00 [INF] d499e4cf-ae24-4515-bcc1-7d044d4432ae Cache hit for trending videos key: trending:US:::20
+2026-06-10 03:38:30.660 +02:00 [INF] d499e4cf-ae24-4515-bcc1-7d044d4432ae Handled FetchTrendingVideosCommand in 47ms
+2026-06-10 03:38:30.734 +02:00 [INF] d499e4cf-ae24-4515-bcc1-7d044d4432ae HTTP GET /api/v1/discovery/trending responded 200 in 129.8590ms
+2026-06-10 03:38:30.740 +02:00 [INF] d499e4cf-ae24-4515-bcc1-7d044d4432ae HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: d499e4cf-ae24-4515-bcc1-7d044d4432ae
+2026-06-10 03:39:47.846 +02:00 [INF] 84c432a1-81f9-4bed-a02d-5dd36410191e HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 84c432a1-81f9-4bed-a02d-5dd36410191e
+2026-06-10 03:39:47.847 +02:00 [INF] 84c432a1-81f9-4bed-a02d-5dd36410191e HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.2395ms
+2026-06-10 03:39:47.849 +02:00 [INF] 84c432a1-81f9-4bed-a02d-5dd36410191e HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 84c432a1-81f9-4bed-a02d-5dd36410191e
+2026-06-10 03:39:47.852 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b HTTP GET /api/v1/discovery/trending started | CorrelationId: 9b047830-8096-497c-b9e3-cdfd5568ba4b
+2026-06-10 03:39:47.864 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b Handling FetchTrendingVideosCommand
+2026-06-10 03:39:47.900 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 03:39:47.951 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:39:48.215 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 03:39:48.490 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b Received HTTP response headers after 272.8704ms - 200
+2026-06-10 03:39:48.492 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b End processing HTTP request after 540.5846ms - 200
+2026-06-10 03:39:49.751 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b Handled FetchTrendingVideosCommand in 1851ms
+2026-06-10 03:39:49.754 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b HTTP GET /api/v1/discovery/trending responded 200 in 1898.2110ms
+2026-06-10 03:39:49.757 +02:00 [INF] 9b047830-8096-497c-b9e3-cdfd5568ba4b HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 9b047830-8096-497c-b9e3-cdfd5568ba4b
+2026-06-10 03:49:13.931 +02:00 [INF] 44014583-5a85-47cb-8b90-f68e7a9610b4 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 44014583-5a85-47cb-8b90-f68e7a9610b4
+2026-06-10 03:49:13.933 +02:00 [INF] 44014583-5a85-47cb-8b90-f68e7a9610b4 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.0945ms
+2026-06-10 03:49:13.935 +02:00 [INF] 44014583-5a85-47cb-8b90-f68e7a9610b4 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 44014583-5a85-47cb-8b90-f68e7a9610b4
+2026-06-10 03:49:14.276 +02:00 [INF] 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478 HTTP GET /api/v1/discovery/trending started | CorrelationId: 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478
+2026-06-10 03:49:14.439 +02:00 [INF] 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478 Handling FetchTrendingVideosCommand
+2026-06-10 03:49:14.441 +02:00 [INF] 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478 Cache hit for trending videos key: trending:US:::20
+2026-06-10 03:49:14.453 +02:00 [INF] 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478 Handled FetchTrendingVideosCommand in 12ms
+2026-06-10 03:49:14.472 +02:00 [INF] 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478 HTTP GET /api/v1/discovery/trending responded 200 in 193.6760ms
+2026-06-10 03:49:14.477 +02:00 [INF] 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 4c7bf6bd-e61c-4017-b1e3-f6f87c2a7478
+2026-06-10 03:49:21.681 +02:00 [INF] 5303c2a3-fd58-4995-94e5-d15016fd1a9e HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: 5303c2a3-fd58-4995-94e5-d15016fd1a9e
+2026-06-10 03:49:21.683 +02:00 [INF] 5303c2a3-fd58-4995-94e5-d15016fd1a9e HTTP OPTIONS /api/v1/discovery/trending responded 204 in 0.0603ms
+2026-06-10 03:49:21.686 +02:00 [INF] 5303c2a3-fd58-4995-94e5-d15016fd1a9e HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: 5303c2a3-fd58-4995-94e5-d15016fd1a9e
+2026-06-10 03:49:21.847 +02:00 [INF] cbab0bc9-039e-44d2-b44b-5f0ca563a838 HTTP GET /api/v1/discovery/trending started | CorrelationId: cbab0bc9-039e-44d2-b44b-5f0ca563a838
+2026-06-10 03:49:21.853 +02:00 [INF] cbab0bc9-039e-44d2-b44b-5f0ca563a838 Handling FetchTrendingVideosCommand
+2026-06-10 03:49:21.854 +02:00 [INF] cbab0bc9-039e-44d2-b44b-5f0ca563a838 Cache hit for trending videos key: trending:US:::20
+2026-06-10 03:49:21.855 +02:00 [INF] cbab0bc9-039e-44d2-b44b-5f0ca563a838 Handled FetchTrendingVideosCommand in 1ms
+2026-06-10 03:49:21.856 +02:00 [INF] cbab0bc9-039e-44d2-b44b-5f0ca563a838 HTTP GET /api/v1/discovery/trending responded 200 in 4.7733ms
+2026-06-10 03:49:21.858 +02:00 [INF] cbab0bc9-039e-44d2-b44b-5f0ca563a838 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: cbab0bc9-039e-44d2-b44b-5f0ca563a838
+2026-06-10 05:32:54.068 +02:00 [INF] f15a15de-d6a5-4390-b0c7-ecbdb5fe40ba HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: f15a15de-d6a5-4390-b0c7-ecbdb5fe40ba
+2026-06-10 05:33:00.660 +02:00 [INF] f15a15de-d6a5-4390-b0c7-ecbdb5fe40ba HTTP OPTIONS /api/v1/discovery/trending responded 204 in 81.0562ms
+2026-06-10 05:33:00.716 +02:00 [INF] f15a15de-d6a5-4390-b0c7-ecbdb5fe40ba HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: f15a15de-d6a5-4390-b0c7-ecbdb5fe40ba
+2026-06-10 05:33:00.720 +02:00 [WRN] f15a15de-d6a5-4390-b0c7-ecbdb5fe40ba SLOW REQUEST: OPTIONS /api/v1/discovery/trending took 6652ms
+2026-06-10 05:33:01.005 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 HTTP GET /api/v1/discovery/trending started | CorrelationId: f3313f00-aa3b-4fc6-b15f-ac59d29371d5
+2026-06-10 05:33:01.976 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Handling FetchTrendingVideosCommand
+2026-06-10 05:33:02.413 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Fetching trending videos from YouTube: region=US, limit=10
+2026-06-10 05:33:02.501 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 05:33:02.502 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=10&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 05:33:02.941 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Received HTTP response headers after 437.9469ms - 200
+2026-06-10 05:33:02.945 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 End processing HTTP request after 444.0653ms - 200
+2026-06-10 05:33:14.569 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Handled FetchTrendingVideosCommand in 12589ms
+2026-06-10 05:33:14.576 +02:00 [WRN] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 Slow request detected: FetchTrendingVideosCommand took 12589ms
+2026-06-10 05:33:14.579 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 HTTP GET /api/v1/discovery/trending responded 200 in 13570.1946ms
+2026-06-10 05:33:14.586 +02:00 [INF] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: f3313f00-aa3b-4fc6-b15f-ac59d29371d5
+2026-06-10 05:33:14.611 +02:00 [WRN] f3313f00-aa3b-4fc6-b15f-ac59d29371d5 SLOW REQUEST: GET /api/v1/discovery/trending took 13606ms
+2026-06-10 05:43:08.569 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-10 05:44:24.180 +02:00 [INF] ba16ff3e-23f9-4574-8c18-68a54cdc3842 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: ba16ff3e-23f9-4574-8c18-68a54cdc3842
+2026-06-10 05:44:25.416 +02:00 [WRN] ba16ff3e-23f9-4574-8c18-68a54cdc3842 Failed to determine the https port for redirect.
+2026-06-10 05:44:25.439 +02:00 [INF] ba16ff3e-23f9-4574-8c18-68a54cdc3842 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 1203.7176ms
+2026-06-10 05:44:25.480 +02:00 [INF] ba16ff3e-23f9-4574-8c18-68a54cdc3842 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: ba16ff3e-23f9-4574-8c18-68a54cdc3842
+2026-06-10 05:44:25.559 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 HTTP GET /api/v1/discovery/trending started | CorrelationId: 75cc8394-d428-4be7-b9d6-87536d849500
+2026-06-10 05:44:25.963 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 Handling FetchTrendingVideosCommand
+2026-06-10 05:44:39.756 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 Fetching trending videos from YouTube: region=US, limit=20
+2026-06-10 05:44:39.924 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=20&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 05:44:40.184 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=20&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-10 05:44:42.017 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 Received HTTP response headers after 1827.216ms - 200
+2026-06-10 05:44:42.036 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 End processing HTTP request after 2118.6022ms - 200
+2026-06-10 05:44:56.760 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 Handled FetchTrendingVideosCommand in 30786ms
+2026-06-10 05:44:56.761 +02:00 [WRN] 75cc8394-d428-4be7-b9d6-87536d849500 Slow request detected: FetchTrendingVideosCommand took 30786ms
+2026-06-10 05:44:56.896 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 HTTP GET /api/v1/discovery/trending responded 200 in 31335.1512ms
+2026-06-10 05:44:56.966 +02:00 [INF] 75cc8394-d428-4be7-b9d6-87536d849500 HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: 75cc8394-d428-4be7-b9d6-87536d849500
+2026-06-10 05:44:56.974 +02:00 [WRN] 75cc8394-d428-4be7-b9d6-87536d849500 SLOW REQUEST: GET /api/v1/discovery/trending took 31414ms
