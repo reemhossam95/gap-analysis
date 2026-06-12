@@ -226,7 +226,6 @@ public class YouTubeService : IYouTubeService
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
     };
 
-    // ── YouTube API response models ──────────────────────────────────────────
 
     private sealed class YouTubeVideoListResponse
     {

@@ -13,7 +13,5 @@ public class AnalyticsSnapshot : BaseEntity
     public long NewSubscribers { get; set; }
     public long NewViews { get; set; }
     public DateTime RecordedAt { get; set; }
-
-    // Navigation
     public Channel? Channel { get; set; }
 }

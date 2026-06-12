@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 
-// ── Bootstrap Serilog ────────────────────────────────────────────────────────
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
@@ -37,7 +36,6 @@ try
 
     builder.Host.UseSerilog();
 
-    // ── Controllers ──────────────────────────────────────────────────────────
     builder.Services.AddControllers()
         .AddJsonOptions(options =>
         {
@@ -48,7 +46,6 @@ try
                 System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
         });
 
-    // ── API Versioning ────────────────────────────────────────────────────────
     builder.Services.AddApiVersioning(options =>
     {
         options.DefaultApiVersion = new ApiVersion(1, 0);
@@ -65,11 +62,9 @@ try
         options.SubstituteApiVersionInUrl = true;
     });
 
-    // ── Swagger ───────────────────────────────────────────────────────────────
     builder.Services.AddSwaggerWithVersioning();
     builder.Services.AddEndpointsApiExplorer();
 
-    // ── Rate Limiting ─────────────────────────────────────────────────────────
     builder.Services.AddRateLimiter(options =>
     {
         options.OnRejected = async (context, cancellationToken) =>
@@ -98,7 +93,6 @@ try
         });
     });
 
-    // ── CORS ──────────────────────────────────────────────────────────────────
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowFrontend", policy =>
@@ -110,22 +104,17 @@ try
         });
     });
 
-    // ── Health Checks ─────────────────────────────────────────────────────────
     builder.Services.AddHealthChecks()
         .AddDbContextCheck<AppDbContext>("database");
 
-    // ── Application + Infrastructure ─────────────────────────────────────────
     builder.Services.AddApplicationServices();
     builder.Services.AddInfrastructureServices(builder.Configuration);
 
-    // ✅ FIX: Gemini Options binding
     builder.Services.Configure<GeminiOptions>(
         builder.Configuration.GetSection("Gemini"));
 
-    // ── Build App ─────────────────────────────────────────────────────────────
     var app = builder.Build();
 
-    // ── Middleware pipeline ───────────────────────────────────────────────────
     app.UseMiddleware<GlobalExceptionMiddleware>();
     app.UseMiddleware<CorrelationIdMiddleware>();
     app.UseMiddleware<PerformanceLoggingMiddleware>();

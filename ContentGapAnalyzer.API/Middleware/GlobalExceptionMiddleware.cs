@@ -24,7 +24,6 @@ public class GlobalExceptionMiddleware
         }
         catch (OperationCanceledException)
         {
-            // هذا يحدث عندما يغلق المستخدم المتصفح أو يتم إلغاء الطلب
             _logger.LogInformation("Request was cancelled by the client: {Method} {Path}", 
                 context.Request.Method, context.Request.Path);
             

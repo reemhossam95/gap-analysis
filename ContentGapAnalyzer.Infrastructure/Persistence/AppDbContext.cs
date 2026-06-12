@@ -7,13 +7,11 @@ public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    // Existing tables — mapped exactly to the existing AutotubeDB schema
     public DbSet<Channel> Channels => Set<Channel>();
     public DbSet<Video> Videos => Set<Video>();
     public DbSet<AnalyticsSnapshot> AnalyticsSnapshots => Set<AnalyticsSnapshot>();
     public DbSet<HistoricalStatistic> HistoricalStatistics => Set<HistoricalStatistic>();
 
-    // New tables added by this backend (safe migrations only)
     public DbSet<GapReport> GapReports => Set<GapReport>();
     public DbSet<AnalysisSession> AnalysisSessions => Set<AnalysisSession>();
     public DbSet<CachedTrendResult> CachedTrendResults => Set<CachedTrendResult>();

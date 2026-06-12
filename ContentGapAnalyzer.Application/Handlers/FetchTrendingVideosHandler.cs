@@ -61,7 +61,6 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
         var existingChannels = await channelRepo.FindAsync(c => channelIds.Contains(c.ChannelId), cancellationToken);
         var existingChannelIds = existingChannels.Select(c => c.ChannelId).ToHashSet();
         
-        // جلب التقارير المتاحة للبيانات الحقيقية
         var existingReports = await gapReportRepo.FindAsync(r => videoIds.Contains(r.VideoId), cancellationToken);
         var reportDict = existingReports.ToDictionary(r => r.VideoId);
 
@@ -74,8 +73,6 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
             var video = videos[i];
             reportDict.TryGetValue(video.VideoId, out var report);
 
-// بدلاً من الأقواس {}، سنستخدم الـ Constructor المباشر
-            // تأكدي أن هذا الترتيب يطابق تعريف الـ DTO لديك تماماً
             var enriched = new TrendingVideoDto(
                 video.VideoId,
                 video.Title,

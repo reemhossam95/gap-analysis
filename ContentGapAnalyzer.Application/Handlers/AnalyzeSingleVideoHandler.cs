@@ -22,7 +22,6 @@ public class AnalyzeSingleVideoHandler : IRequestHandler<AnalyzeSingleVideoComma
 
     public async Task<ApiResponse<GapReportDto>> Handle(AnalyzeSingleVideoCommand request, CancellationToken cancellationToken)
     {
-        // 1. جلب الفيديو من قاعدة البيانات
         var videoRepo = _unitOfWork.Repository<Video>();
         var videos = await videoRepo.FindAsync(v => v.VideoId == request.VideoId, cancellationToken);
         var video = videos.FirstOrDefault();
@@ -32,7 +31,6 @@ public class AnalyzeSingleVideoHandler : IRequestHandler<AnalyzeSingleVideoComma
             return ApiResponse<GapReportDto>.Fail("Video not found in database");
         }
 
-        // 2. التحقق: هل تم تحليل هذا الفيديو مسبقاً؟
         var analysisRepo = _unitOfWork.Repository<VideoAnalysis>();
         var existingAnalysis = await analysisRepo.FindAsync(a => a.VideoId == request.VideoId, cancellationToken);
         var cached = existingAnalysis.FirstOrDefault();
@@ -48,16 +46,13 @@ public class AnalyzeSingleVideoHandler : IRequestHandler<AnalyzeSingleVideoComma
                 cached.TrendGrowth, cached.CreatedAt));
         }
 
-        // 3. تجهيز البيانات للتحليل (باستخدام GapAnalysisInput)
         var gapInput = new GapAnalysisInput(
             new VideoBasicInfo(video.VideoId, video.Title),
-            new List<VideoBasicInfo>() // يمكن إضافة منافسين هنا لاحقاً
+            new List<VideoBasicInfo>() 
         );
 
-        // 4. استدعاء Gemini للتحليل (الدالة التي تعيد التقرير الكامل)
         var analysis = await _geminiAiService.GenerateGapAnalysisAsync(gapInput, cancellationToken);
 
-        // 5. حفظ النتيجة كاملة في الداتابيس
         var newAnalysis = new VideoAnalysis {
             VideoId = video.VideoId,
             CompetitionDifficulty = analysis.CompetitionDifficulty,
@@ -80,7 +75,6 @@ public class AnalyzeSingleVideoHandler : IRequestHandler<AnalyzeSingleVideoComma
         await analysisRepo.AddAsync(newAnalysis, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // 6. تحويل النتيجة إلى DTO
         var report = new GapReportDto(
             newAnalysis.Id,
             video.VideoId,

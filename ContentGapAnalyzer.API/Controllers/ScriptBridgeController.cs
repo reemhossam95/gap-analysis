@@ -9,10 +9,6 @@ using Microsoft.AspNetCore.RateLimiting;
 
 namespace ContentGapAnalyzer.API.Controllers;
 
-/// <summary>
-/// Script Bridge Engine — stores and retrieves analysis session context
-/// for integration with the future AI Script Generator.
-/// </summary>
 [ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/script-bridge")]
@@ -23,11 +19,6 @@ public class ScriptBridgeController : ControllerBase
 
     public ScriptBridgeController(IMediator mediator) => _mediator = mediator;
 
-    /// <summary>
-    /// Save an analysis session with gap report context for later script generation.
-    /// </summary>
-    /// <param name="request">Session details including report ID, video ID, notes, and context JSON.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
     [HttpPost("sessions")]
     [ProducesResponseType(typeof(ApiResponse<AnalysisSessionDto>), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -55,11 +46,6 @@ public class ScriptBridgeController : ControllerBase
             result);
     }
 
-    /// <summary>
-    /// Get all sessions for a specific gap report.
-    /// </summary>
-    /// <param name="gapReportId">Gap report database ID.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
     [HttpGet("sessions/report/{gapReportId:int}")]
     [ProducesResponseType(typeof(ApiResponse<IReadOnlyList<AnalysisSessionDto>>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -73,11 +59,6 @@ public class ScriptBridgeController : ControllerBase
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
-    /// <summary>
-    /// Get a specific analysis session by its GUID.
-    /// </summary>
-    /// <param name="sessionId">Session GUID.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
     [HttpGet("sessions/{sessionId:guid}")]
     [ProducesResponseType(typeof(ApiResponse<AnalysisSessionDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -92,7 +73,6 @@ public class ScriptBridgeController : ControllerBase
     }
 }
 
-/// <summary>Request model for saving an analysis session.</summary>
 public record SaveSessionRequest(
     int GapReportId,
     string VideoId,

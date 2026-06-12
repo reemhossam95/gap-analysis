@@ -9,9 +9,6 @@ using Microsoft.AspNetCore.RateLimiting;
 
 namespace ContentGapAnalyzer.API.Controllers;
 
-/// <summary>
-/// Gap Analysis Engine — AI-powered content gap analysis.
-/// </summary>
 [ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/gap-analysis")]
@@ -22,12 +19,6 @@ public class GapAnalysisController : ControllerBase
 
     public GapAnalysisController(IMediator mediator) => _mediator = mediator;
 
-    /// <summary>
-    /// Run a full AI-powered gap analysis on a YouTube video.
-    /// Fetches the video, retrieves competitors, and generates a comprehensive gap report via Gemini AI.
-    /// </summary>
-    /// <param name="request">Video ID to analyze.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
     [HttpPost("analyze")]
     [ProducesResponseType(typeof(ApiResponse<GapReportDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -48,11 +39,6 @@ public class GapAnalysisController : ControllerBase
         return Ok(result);
     }
 
-    /// <summary>
-    /// Get an existing gap report by YouTube video ID.
-    /// </summary>
-    /// <param name="videoId">YouTube video ID.</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
     [HttpGet("reports/{videoId}")]
     [ProducesResponseType(typeof(ApiResponse<GapReportDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -65,13 +51,6 @@ public class GapAnalysisController : ControllerBase
 
         return result.Success ? Ok(result) : NotFound(result);
     }
-
-    /// <summary>
-    /// Get paginated analysis history.
-    /// </summary>
-    /// <param name="page">Page number (default: 1).</param>
-    /// <param name="pageSize">Items per page (default: 20, max: 100).</param>
-    /// <param name="cancellationToken">Cancellation token.</param>
     [HttpGet("history")]
     [ProducesResponseType(typeof(PagedResponse<GapReportDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -87,5 +66,4 @@ public class GapAnalysisController : ControllerBase
     }
 }
 
-/// <summary>Request model for gap analysis.</summary>
 public record AnalyzeRequest(string VideoId);

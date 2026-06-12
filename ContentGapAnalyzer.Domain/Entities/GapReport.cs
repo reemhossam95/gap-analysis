@@ -28,7 +28,6 @@ public class GapReport : BaseEntity
     public double OpportunityScore { get; set; }
     public double TrendGrowth { get; set; }
 
-    // Navigation
     public Video? Video { get; set; }
     public ICollection<AnalysisSession> AnalysisSessions { get; set; } = new List<AnalysisSession>();
 }

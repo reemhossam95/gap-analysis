@@ -39,9 +39,6 @@ public class GeminiAiService : IGeminiAiService
             throw new InvalidOperationException("No Gemini API keys found.");
     }
 
-    // ───────────────────────────────
-    // 1. VIDEO METRICS ANALYSIS
-    // ───────────────────────────────
     public async Task<VideoMetricsAnalysis> AnalyzeVideoMetricsAsync(
         VideoMetricsInput input,
         CancellationToken cancellationToken = default)
@@ -85,9 +82,6 @@ public class GeminiAiService : IGeminiAiService
         }
     }
 
-    // ───────────────────────────────
-    // 2. GAP ANALYSIS
-    // ───────────────────────────────
     public async Task<GapAnalysisResult> GenerateGapAnalysisAsync(
         GapAnalysisInput input,
         CancellationToken cancellationToken = default)
@@ -119,9 +113,6 @@ public class GeminiAiService : IGeminiAiService
         );
     }
 
-    // ───────────────────────────────
-    // GEMINI CALL
-    // ───────────────────────────────
     private async Task<string> CallGeminiAsync(string prompt, CancellationToken cancellationToken)
     {
         var body = new
@@ -178,9 +169,6 @@ public class GeminiAiService : IGeminiAiService
         throw new InvalidOperationException("All Gemini API keys exceeded quota.");
     }
 
-    // ───────────────────────────────
-    // HELPERS
-    // ───────────────────────────────
     private static string Sanitize(string raw)
     {
         if (string.IsNullOrWhiteSpace(raw)) return raw;
@@ -201,9 +189,6 @@ public class GeminiAiService : IGeminiAiService
         Target: {input.TargetVideo.Title}
         Competitors: {string.Join("\n", input.CompetitorVideos.Select(v => v.Title))}";
 
-    // ───────────────────────────────
-    // DTOs for internal deserialization only
-    // ───────────────────────────────
     private sealed class GeminiApiResponseWrapper { public List<GeminiCandidate>? Candidates { get; set; } }
     private sealed class GeminiCandidate { public GeminiContent? Content { get; set; } }
     private sealed class GeminiContent { public List<GeminiPart>? Parts { get; set; } }

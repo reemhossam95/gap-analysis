@@ -21,6 +21,5 @@ public class Video : BaseEntity
     // Navigation
     public Channel? Channel { get; set; }
 
-    // Gap analysis new tables (added by backend, not in original schema)
     public ICollection<GapReport> GapReports { get; set; } = new List<GapReport>();
 }

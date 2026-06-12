@@ -4,8 +4,8 @@ using ContentGapAnalyzer.Application.Common;
 using ContentGapAnalyzer.Application.DTOs;
 using ContentGapAnalyzer.Domain.Entities;
 using ContentGapAnalyzer.Domain.Enums;
-using ContentGapAnalyzer.Domain.Interfaces;       // ضروري لـ IUnitOfWork
-using ContentGapAnalyzer.Application.Interfaces;  // ضروري لـ IYouTubeService و IGeminiAiService
+using ContentGapAnalyzer.Domain.Interfaces;       
+using ContentGapAnalyzer.Application.Interfaces;  
 using MediatR;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
@@ -57,21 +57,17 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
             return ApiResponse<GapReportDto>.Ok(dto, "Gap report retrieved from database");
         }
 
-        // Fetch target video
         var targetVideo = await _youTubeService.GetVideoDetailsAsync(request.VideoId, cancellationToken);
         if (targetVideo is null)
             return ApiResponse<GapReportDto>.Fail($"Video with ID '{request.VideoId}' not found on YouTube");
 
-        // Fetch competitors
         _logger.LogInformation("Fetching competitor videos for: {VideoId}", request.VideoId);
         var competitors = await _youTubeService.GetCompetitorVideosAsync(request.VideoId, 10, cancellationToken);
 
-        // Run Gemini gap analysis
         _logger.LogInformation("Running Gemini AI gap analysis for video: {VideoId}", request.VideoId);
         GapAnalysisResult analysisResult;
         try
         {
-            // تحويل الأنواع لتطابق GapAnalysisInput
             var targetBasic = new VideoBasicInfo(targetVideo.VideoId, targetVideo.Title);
             var compBasics = competitors.Select(c => new VideoBasicInfo(c.VideoId, c.Title)).ToList();
             
@@ -84,7 +80,6 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
             return ApiResponse<GapReportDto>.Fail("AI analysis service is temporarily unavailable. Please try again.");
         }
 
-        // Persist or update GapReport
         var report = existingReport ?? new GapReport
         {
             VideoId = request.VideoId,
