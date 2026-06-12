@@ -1,16 +1,12 @@
+# Build folders
 bin/
 obj/
 .vs/
+
+# User files
 *.user
 *.suo
 
-ContentGapAnalyzer.API/bin/
-ContentGapAnalyzer.API/obj/
-ContentGapAnalyzer.Application/bin/
-ContentGapAnalyzer.Application/obj/
-ContentGapAnalyzer.Domain/bin/
-ContentGapAnalyzer.Domain/obj/
-ContentGapAnalyzer.Infrastructure/bin/
-ContentGapAnalyzer.Infrastructure/obj/
-
+# Secrets / configs
 appsettings.Development.json
+appsettings.Production.json
