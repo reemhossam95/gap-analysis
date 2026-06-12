@@ -571,3 +571,43 @@ Error Number:207,State:1,Class:16
 2026-06-12 18:02:30.901 +02:00 [INF] c27f54c8-5e4e-451d-a88e-cc816a8ec32d Handled SaveAnalysisSessionCommand in 1154ms
 2026-06-12 18:02:31.112 +02:00 [INF] c27f54c8-5e4e-451d-a88e-cc816a8ec32d HTTP POST /api/v1/script-bridge/sessions responded 201 in 1415.0868ms
 2026-06-12 18:02:31.114 +02:00 [INF] c27f54c8-5e4e-451d-a88e-cc816a8ec32d HTTP POST /api/v1/script-bridge/sessions completed with 201 | CorrelationId: c27f54c8-5e4e-451d-a88e-cc816a8ec32d
+2026-06-12 19:16:52.556 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-12 19:52:09.266 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-12 19:52:24.173 +02:00 [INF] 917a91d5-13cc-4bd2-98ef-6b5155e6cc35 HTTP GET /swagger/index.html started | CorrelationId: 917a91d5-13cc-4bd2-98ef-6b5155e6cc35
+2026-06-12 19:52:26.255 +02:00 [INF] 917a91d5-13cc-4bd2-98ef-6b5155e6cc35 HTTP GET /swagger/index.html responded 200 in 2017.6732ms
+2026-06-12 19:52:26.281 +02:00 [INF] 917a91d5-13cc-4bd2-98ef-6b5155e6cc35 HTTP GET /swagger/index.html completed with 200 | CorrelationId: 917a91d5-13cc-4bd2-98ef-6b5155e6cc35
+2026-06-12 19:52:26.285 +02:00 [WRN] 917a91d5-13cc-4bd2-98ef-6b5155e6cc35 SLOW REQUEST: GET /swagger/index.html took 2147ms
+2026-06-12 19:52:30.433 +02:00 [INF] a90acb81-4ca0-436c-89e7-cca55e45ecd4 HTTP GET /swagger/v1/swagger.json started | CorrelationId: a90acb81-4ca0-436c-89e7-cca55e45ecd4
+2026-06-12 19:52:32.213 +02:00 [INF] a90acb81-4ca0-436c-89e7-cca55e45ecd4 HTTP GET /swagger/v1/swagger.json responded 200 in 1776.4500ms
+2026-06-12 19:52:32.216 +02:00 [INF] a90acb81-4ca0-436c-89e7-cca55e45ecd4 HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: a90acb81-4ca0-436c-89e7-cca55e45ecd4
+2026-06-12 19:54:05.452 +02:00 [INF] f4b9c90c-2c7a-40bb-a47f-f6ea04ae9fd8 HTTP OPTIONS /api/v1/discovery/trending started | CorrelationId: f4b9c90c-2c7a-40bb-a47f-f6ea04ae9fd8
+2026-06-12 19:54:05.533 +02:00 [WRN] f4b9c90c-2c7a-40bb-a47f-f6ea04ae9fd8 Failed to determine the https port for redirect.
+2026-06-12 19:54:05.548 +02:00 [INF] f4b9c90c-2c7a-40bb-a47f-f6ea04ae9fd8 HTTP OPTIONS /api/v1/discovery/trending responded 204 in 94.8603ms
+2026-06-12 19:54:05.550 +02:00 [INF] f4b9c90c-2c7a-40bb-a47f-f6ea04ae9fd8 HTTP OPTIONS /api/v1/discovery/trending completed with 204 | CorrelationId: f4b9c90c-2c7a-40bb-a47f-f6ea04ae9fd8
+2026-06-12 19:54:05.756 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a HTTP GET /api/v1/discovery/trending started | CorrelationId: c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a
+2026-06-12 19:54:12.489 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Handling FetchTrendingVideosCommand
+2026-06-12 19:54:12.891 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Fetching trending videos from YouTube: region=US, limit=20
+2026-06-12 19:54:12.936 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Start processing HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=20&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-12 19:54:13.033 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Sending HTTP request GET https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=20&key=AIzaSyAdDoOB5ZWa1Zvjzft2MIWlEnIujOYObRo
+2026-06-12 19:54:13.942 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Received HTTP response headers after 905.1243ms - 200
+2026-06-12 19:54:13.960 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a End processing HTTP request after 1035.7989ms - 200
+2026-06-12 19:54:41.524 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Handled FetchTrendingVideosCommand in 29030ms
+2026-06-12 19:54:41.525 +02:00 [WRN] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a Slow request detected: FetchTrendingVideosCommand took 29030ms
+2026-06-12 19:54:41.633 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a HTTP GET /api/v1/discovery/trending responded 200 in 35873.0973ms
+2026-06-12 19:54:41.669 +02:00 [INF] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a HTTP GET /api/v1/discovery/trending completed with 200 | CorrelationId: c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a
+2026-06-12 19:54:41.671 +02:00 [WRN] c7a5b2c3-9e1d-4efd-95d0-15ba01e7a02a SLOW REQUEST: GET /api/v1/discovery/trending took 35915ms
+2026-06-12 20:16:46.349 +02:00 [INF] 988aad03-e14b-4795-8f8b-ed4ef55c2691 HTTP GET /api/v1/Discovery/stats started | CorrelationId: 988aad03-e14b-4795-8f8b-ed4ef55c2691
+2026-06-12 20:16:47.127 +02:00 [INF] 988aad03-e14b-4795-8f8b-ed4ef55c2691 HTTP GET /api/v1/Discovery/stats responded 200 in 776.4758ms
+2026-06-12 20:16:47.130 +02:00 [INF] 988aad03-e14b-4795-8f8b-ed4ef55c2691 HTTP GET /api/v1/Discovery/stats completed with 200 | CorrelationId: 988aad03-e14b-4795-8f8b-ed4ef55c2691
+2026-06-12 20:23:24.889 +02:00 [INF]  Starting Content Gap Analyzer API
+2026-06-12 20:23:32.273 +02:00 [INF] 2826532f-bd94-4237-9726-fef92555fda5 HTTP GET /swagger/index.html started | CorrelationId: 2826532f-bd94-4237-9726-fef92555fda5
+2026-06-12 20:23:32.687 +02:00 [INF] 2826532f-bd94-4237-9726-fef92555fda5 HTTP GET /swagger/index.html responded 200 in 403.6459ms
+2026-06-12 20:23:32.700 +02:00 [INF] 2826532f-bd94-4237-9726-fef92555fda5 HTTP GET /swagger/index.html completed with 200 | CorrelationId: 2826532f-bd94-4237-9726-fef92555fda5
+2026-06-12 20:23:33.676 +02:00 [INF] 1aa97d5c-505e-4e54-9515-7455cc963e54 HTTP GET /swagger/v1/swagger.json started | CorrelationId: 1aa97d5c-505e-4e54-9515-7455cc963e54
+2026-06-12 20:23:33.881 +02:00 [INF] 1aa97d5c-505e-4e54-9515-7455cc963e54 HTTP GET /swagger/v1/swagger.json responded 200 in 201.8038ms
+2026-06-12 20:23:33.891 +02:00 [INF] 1aa97d5c-505e-4e54-9515-7455cc963e54 HTTP GET /swagger/v1/swagger.json completed with 200 | CorrelationId: 1aa97d5c-505e-4e54-9515-7455cc963e54
+2026-06-12 20:23:39.360 +02:00 [INF] f2f1f04d-8b2a-4431-8031-2c6d665dd418 HTTP GET /api/v1/Discovery/stats started | CorrelationId: f2f1f04d-8b2a-4431-8031-2c6d665dd418
+2026-06-12 20:23:39.383 +02:00 [WRN] f2f1f04d-8b2a-4431-8031-2c6d665dd418 Failed to determine the https port for redirect.
+2026-06-12 20:23:41.926 +02:00 [INF] f2f1f04d-8b2a-4431-8031-2c6d665dd418 HTTP GET /api/v1/Discovery/stats responded 200 in 2546.4325ms
+2026-06-12 20:23:41.929 +02:00 [INF] f2f1f04d-8b2a-4431-8031-2c6d665dd418 HTTP GET /api/v1/Discovery/stats completed with 200 | CorrelationId: f2f1f04d-8b2a-4431-8031-2c6d665dd418
+2026-06-12 20:23:41.931 +02:00 [WRN] f2f1f04d-8b2a-4431-8031-2c6d665dd418 SLOW REQUEST: GET /api/v1/Discovery/stats took 2571ms

@@ -3,12 +3,12 @@ using ContentGapAnalyzer.Application.Commands;
 using ContentGapAnalyzer.Application.Common;
 using ContentGapAnalyzer.Application.DTOs;
 using ContentGapAnalyzer.Application.Queries;
-using ContentGapAnalyzer.Domain.Entities; // تأكدي من وجودها
-using ContentGapAnalyzer.Domain.Interfaces; // تأكدي من وجودها
+using ContentGapAnalyzer.Domain.Entities;
+using ContentGapAnalyzer.Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
-using Microsoft.EntityFrameworkCore; // ضروري لاستخدام CountAsync و AverageAsync
+using Microsoft.EntityFrameworkCore;
 
 namespace ContentGapAnalyzer.API.Controllers;
 
@@ -22,7 +22,7 @@ namespace ContentGapAnalyzer.API.Controllers;
 public class DiscoveryController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IUnitOfWork _unitOfWork; // تمت إضافة الـ IUnitOfWork هنا
+    private readonly IUnitOfWork _unitOfWork;
 
     public DiscoveryController(IMediator mediator, IUnitOfWork unitOfWork) 
     {
@@ -32,6 +32,7 @@ public class DiscoveryController : ControllerBase
 
     /// <summary>
     /// Get dashboard statistics for the discovery hub.
+    /// تم التعديل لتحويل القيم إلى نسب مئوية وتنسيق احترافي.
     /// </summary>
     [HttpGet("stats")]
     public async Task<IActionResult> GetDashboardStats(CancellationToken ct)
@@ -40,12 +41,22 @@ public class DiscoveryController : ControllerBase
         var reportRepo = _unitOfWork.Repository<GapReport>();
         var channelRepo = _unitOfWork.Repository<Channel>();
 
+        // جلب البيانات الخام من قاعدة البيانات
+        var totalTopics = await videoRepo.Query().CountAsync(ct);
+        var totalReports = await reportRepo.Query().CountAsync(ct);
+        var easyWins = await reportRepo.Query().CountAsync(r => r.OpportunityScore > 80, ct);
+        var avgScore = await reportRepo.Query().AverageAsync(r => (double?)r.OpportunityScore, ct) ?? 0;
+        var highGrowthChannels = await channelRepo.Query().CountAsync(c => c.SubscriberCount > 10000, ct);
+
+        // تنسيق البيانات لتصبح جاهزة للعرض كنسب مئوية أو أرقام منسقة
         var stats = new
         {
-            topicsAnalyzed = await videoRepo.Query().CountAsync(ct),
-            easyWinsFound = await reportRepo.Query().CountAsync(r => r.OpportunityScore > 80, ct),
-            avgGapScore = await reportRepo.Query().AverageAsync(r => (double?)r.OpportunityScore, ct) ?? 0,
-            highGrowthChannels = await channelRepo.Query().CountAsync(c => c.SubscriberCount > 10000, ct)
+            topicsAnalyzed = totalTopics,
+            // النسبة المئوية للفوز السهل (Easy Wins) من إجمالي التقارير
+            easyWinsPercentage = totalReports > 0 ? Math.Round((double)easyWins / totalReports * 100, 1) : 0,
+            // المتوسط كنسبة مئوية (بافتراض أن السكور من 10)
+            avgGapPercentage = Math.Round(avgScore * 10, 1),
+            highGrowthChannels = highGrowthChannels
         };
 
         return Ok(new { success = true, data = stats });
@@ -84,9 +95,8 @@ public class DiscoveryController : ControllerBase
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
-/// <summary>
+    /// <summary>
     /// Analyze a specific video on-demand to get deep content gap insights.
-    /// يستخدم الآن الـ AnalyzeGapCommand الموثوق والمصحح.
     /// </summary>
     [HttpPost("analyze/{videoId}")]
     [EnableRateLimiting("analysis")]
@@ -95,10 +105,9 @@ public class DiscoveryController : ControllerBase
         [FromRoute] string videoId,
         CancellationToken cancellationToken = default)
     {
-        // نقوم باستدعاء الـ Command الصحيح الذي أصلحناه في AnalyzeGapHandler
         var command = new AnalyzeGapCommand(videoId);
         var result = await _mediator.Send(command, cancellationToken);
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
-    }
+}
