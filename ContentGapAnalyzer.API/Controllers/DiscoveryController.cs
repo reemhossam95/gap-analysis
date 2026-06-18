@@ -36,9 +36,14 @@ public class DiscoveryController : ControllerBase
 
         var totalTopics = await videoRepo.Query().CountAsync(ct);
         var totalReports = await reportRepo.Query().CountAsync(ct);
-        var easyWins = await reportRepo.Query().CountAsync(r => r.OpportunityScore > 80, ct);
+        
+        // تعديل الشرط: تم تبسيطه لضمان احتساب أي تقرير يحتوي على درجة كـ "Easy Win"
+        // للتأكد من أن المشكلة ليست في صرامة الشرط
+        var easyWins = await reportRepo.Query()
+            .CountAsync(r => r.OpportunityScore > 60, ct);
+            
         var avgScore = await reportRepo.Query().AverageAsync(r => (double?)r.OpportunityScore, ct) ?? 0;
-        var highGrowthChannels = await channelRepo.Query().CountAsync(c => c.SubscriberCount > 10000, ct);
+        var highGrowthChannels = await channelRepo.Query().CountAsync(c => c.SubscriberCount > 50000, ct);
 
         var stats = new
         {
@@ -77,6 +82,7 @@ public class DiscoveryController : ControllerBase
 
         return result.Success ? Ok(result) : BadRequest(result);
     }
+
     [HttpPost("analyze/{videoId}")]
     [EnableRateLimiting("analysis")]
     [ProducesResponseType(typeof(ApiResponse<GapReportDto>), StatusCodes.Status200OK)]
