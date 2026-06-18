@@ -10,3 +10,8 @@ obj/
 # Secrets / configs
 appsettings.Development.json
 appsettings.Production.json
+
+# Logs
+logs/
+*.log
+ContentGapAnalyzer.API/logs/
