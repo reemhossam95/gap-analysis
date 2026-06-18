@@ -34,7 +34,6 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
         FetchTrendingVideosCommand request,
         CancellationToken cancellationToken)
     {
-        // استخدام قيم افتراضية آمنة ومعالجة الـ Nullable لتجنب التنبيهات الصفراء
         var region = request.Region ?? "US";
         var categoryId = request.CategoryId ?? string.Empty;
         var keywords = request.Keywords ?? string.Empty;
@@ -79,6 +78,24 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
             var video = videos[i];
             reportDict.TryGetValue(video.VideoId, out var report);
 
+            // حساب المؤشرات
+            double hoursOld = Math.Max((DateTime.UtcNow - video.PublishedAt).TotalHours, 0.1);
+            double viewsPerHour = video.ViewCount / hoursOld;
+            double engagementRate = (video.LikeCount + (video.CommentCount * 2.0)) / Math.Max(video.ViewCount, 1.0) * 100;
+            
+            // معادلة Gap Score المحدثة: تعتمد على سرعة الانتشار (Velocity) لضمان أن الفيديوهات الفيرال تأخذ أعلى سكور
+            double velocityScore = Math.Log10(viewsPerHour + 1) * 15; 
+            double rawScore = velocityScore + (engagementRate * 0.5);
+            double calculatedOpportunity = Math.Round(Math.Max(Math.Min(rawScore, 99), 35), 2);
+            
+            // معادلة Demand: تعتمد على حجم المشاهدات الإجمالي
+            double demandRatio = (double)video.ViewCount / 5000000;
+            double calculatedDemand = report?.TrendGrowth ?? Math.Round(Math.Max(Math.Min((1 - Math.Exp(-demandRatio * 2)) * 100, 99), 10), 2);
+            
+            // حساب Trend Score و Competition
+            double calculatedTrend = Math.Round(Math.Max(Math.Min(Math.Log10(viewsPerHour + 1) * 20, 100), 10), 2);
+            double calculatedCompetition = report?.CompetitionDifficulty ?? Math.Round(Math.Min(hoursOld/24 * 2 + (100 - engagementRate), 95), 2);
+
             var enriched = new TrendingVideoDto(
                 video.VideoId,
                 video.Title,
@@ -90,10 +107,10 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
                 video.CommentCount,
                 video.PublishedAt,
                 video.Category,
-                report?.OpportunityScore ?? 0,
-                0, // DemandScore
-                report?.CompetitionDifficulty ?? 0,
-                report?.TrendGrowth ?? 0
+                report?.OpportunityScore ?? calculatedOpportunity,
+                calculatedDemand,
+                Math.Max(calculatedCompetition, 1),
+                report?.TrendGrowth ?? calculatedTrend
             );
             enrichedVideos.Add(enriched);
             
