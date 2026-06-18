@@ -56,6 +56,28 @@ public class DiscoveryController : ControllerBase
         return Ok(new { success = true, data = stats });
     }
 
+    [HttpGet("list/{type}")]
+    public async Task<IActionResult> GetDiscoveryList([FromRoute] string type, CancellationToken ct)
+    {
+        switch (type.ToLower())
+        {
+            case "easy-wins":
+                var easyWins = await _unitOfWork.Repository<GapReport>().Query()
+                    .Where(r => r.OpportunityScore > 60)
+                    .ToListAsync(ct);
+                return Ok(new { success = true, data = easyWins });
+
+            case "high-growth":
+                var channels = await _unitOfWork.Repository<Channel>().Query()
+                    .Where(c => c.SubscriberCount > 50000)
+                    .ToListAsync(ct);
+                return Ok(new { success = true, data = channels });
+
+            default:
+                return BadRequest(new { success = false, message = "Invalid list type requested." });
+        }
+    }
+
     [HttpGet("trending")]
     [ProducesResponseType(typeof(ApiResponse<IReadOnlyList<TrendingVideoDto>>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
