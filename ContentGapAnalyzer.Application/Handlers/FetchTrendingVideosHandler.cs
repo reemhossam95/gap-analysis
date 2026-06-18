@@ -34,7 +34,12 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
         FetchTrendingVideosCommand request,
         CancellationToken cancellationToken)
     {
-        var cacheKey = $"trending:{request.Region}:{request.CategoryId}:{request.Keywords}:{request.MaxResults}";
+        // استخدام قيم افتراضية آمنة ومعالجة الـ Nullable لتجنب التنبيهات الصفراء
+        var region = request.Region ?? "US";
+        var categoryId = request.CategoryId ?? string.Empty;
+        var keywords = request.Keywords ?? string.Empty;
+        
+        var cacheKey = $"trending:{region}:{categoryId}:{keywords}:{request.MaxResults}";
 
         if (_cache.TryGetValue(cacheKey, out IReadOnlyList<TrendingVideoDto>? cached) && cached is not null)
         {
@@ -43,9 +48,10 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
         }
 
         var limit = Math.Min(request.MaxResults, 20);
-        _logger.LogInformation("Fetching trending videos from YouTube: region={Region}, limit={Limit}", request.Region, limit);
+        _logger.LogInformation("Fetching trending videos from YouTube: region={Region}, limit={Limit}, category={Category}, keywords={Keywords}", 
+            region, limit, categoryId, keywords);
 
-        var videos = await _youTubeService.GetTrendingVideosAsync(request.Region, request.CategoryId, request.Keywords, limit, cancellationToken);
+        var videos = await _youTubeService.GetTrendingVideosAsync(region, categoryId, keywords, limit, cancellationToken);
 
         var videoRepo = _unitOfWork.Repository<Video>();
         var channelRepo = _unitOfWork.Repository<Channel>();
@@ -85,12 +91,13 @@ public class FetchTrendingVideosHandler : IRequestHandler<FetchTrendingVideosCom
                 video.PublishedAt,
                 video.Category,
                 report?.OpportunityScore ?? 0,
-                0, // هذا المكان مخصص لـ DemandScore
+                0, // DemandScore
                 report?.CompetitionDifficulty ?? 0,
                 report?.TrendGrowth ?? 0
             );
             enrichedVideos.Add(enriched);
-                        if (!existingChannelIds.Contains(video.ChannelId) && !newChannels.Any(c => c.ChannelId == video.ChannelId))
+            
+            if (!existingChannelIds.Contains(video.ChannelId) && !newChannels.Any(c => c.ChannelId == video.ChannelId))
             {
                 newChannels.Add(new Channel { ChannelId = video.ChannelId, CreatedAt = DateTime.UtcNow });
             }

@@ -20,3 +20,6 @@ public record GetTrendingVideosFromCacheQuery(
 ) : IRequest<ApiResponse<IReadOnlyList<TrendingVideoDto>>>;
 
 public record GetVideosByChannelQuery(string ChannelId) : IRequest<ApiResponse<IReadOnlyList<VideoDto>>>;
+
+// الإضافة الجديدة للتقرير التجميعي:
+public record GetAggregateReportQuery(string? ChannelId) : IRequest<AggregateReport>;

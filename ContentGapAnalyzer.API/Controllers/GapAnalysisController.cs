@@ -51,6 +51,27 @@ public class GapAnalysisController : ControllerBase
 
         return result.Success ? Ok(result) : NotFound(result);
     }
+
+    [HttpGet("aggregate")]
+    [ProducesResponseType(typeof(ApiResponse<AggregateReport>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetAggregateReport(
+        [FromQuery] string? channelId = null,
+        CancellationToken cancellationToken = default)
+    {
+        var query = new GetAggregateReportQuery(channelId);
+        var result = await _mediator.Send(query, cancellationToken);
+
+        if (result == null)
+            return NotFound(new { Message = "لا توجد بيانات متاحة للتحليل." });
+
+        // حل إيرور CS1729: نستخدم Constructor فارغ ونعين البيانات للخاصية Data
+        var response = new ApiResponse<AggregateReport>();
+        response.Data = result; 
+        
+        return Ok(response);
+    }
+
     [HttpGet("history")]
     [ProducesResponseType(typeof(PagedResponse<GapReportDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]

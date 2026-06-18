@@ -24,4 +24,7 @@ public interface IGeminiAiService
 
     Task<GapAnalysisResult> GenerateGapAnalysisAsync(
         GapAnalysisInput input, CancellationToken cancellationToken = default);
+
+    Task<AggregateReport> GenerateAggregateReportAsync(
+        List<GapAnalysisResult> previousResults, CancellationToken cancellationToken = default);
 }

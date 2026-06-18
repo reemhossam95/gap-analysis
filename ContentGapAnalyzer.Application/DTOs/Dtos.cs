@@ -1,5 +1,5 @@
 using ContentGapAnalyzer.Domain.Enums;
-
+using System.Text.Json.Serialization;
 namespace ContentGapAnalyzer.Application.DTOs;
 
 public record VideoDto(
@@ -156,3 +156,13 @@ public record GapAnalysisResult(
     double OpportunityScore,
     double TrendGrowth
 );
+
+// --- الإضافة الجديدة للتقرير التجميعي ---
+public record AggregateReport(
+    [property: JsonPropertyName("immediateActions")] List<string> ImmediateActions, // خطوات تنفيذية خلال 30 يوم
+    [property: JsonPropertyName("contentStrategy")] List<string> ContentStrategy,   // استراتيجية المحتوى والنمو
+    [property: JsonPropertyName("retentionTactics")] List<string> RetentionTactics, // أساليب الحفاظ على الجمهور
+    [property: JsonPropertyName("growthOpportunities")] List<string> GrowthOpportunities, // الفرص المتاحة للتوسع
+    [property: JsonPropertyName("executiveSummary")] string ExecutiveSummary       // الخلاصة التنفيذية
+);    
+    

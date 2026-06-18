@@ -4,7 +4,7 @@ using ContentGapAnalyzer.Application.Common;
 using ContentGapAnalyzer.Application.DTOs;
 using ContentGapAnalyzer.Domain.Entities;
 using ContentGapAnalyzer.Domain.Enums;
-using ContentGapAnalyzer.Domain.Interfaces;       
+using ContentGapAnalyzer.Domain.Interfaces;        
 using ContentGapAnalyzer.Application.Interfaces;  
 using MediatR;
 using Microsoft.Extensions.Caching.Memory;
@@ -98,6 +98,10 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         report.CtrOptimizationSuggestionsJson = JsonSerializer.Serialize(analysisResult.CtrOptimizationSuggestions);
         report.HookImprovementsJson = JsonSerializer.Serialize(analysisResult.HookImprovements);
         report.RetentionImprovementsJson = JsonSerializer.Serialize(analysisResult.RetentionImprovements);
+        
+        // التعديل هنا: إذا أضفتِ ActionPlan في كلاس Report، أضيفي هذا السطر:
+        // report.ActionPlanJson = JsonSerializer.Serialize(analysisResult.ActionPlan);
+
         report.ViralPotentialAnalysis = analysisResult.ViralPotentialAnalysis;
         report.CompetitionDifficulty = analysisResult.CompetitionDifficulty;
         report.OpportunityScore = analysisResult.OpportunityScore;

@@ -5,9 +5,9 @@ using MediatR;
 namespace ContentGapAnalyzer.Application.Commands;
 
 public record FetchTrendingVideosCommand(
-    string Region,
-    string CategoryId,
-    string Keywords,
+    string? Region,
+    string? CategoryId,
+    string? Keywords,
     int MaxResults
 ) : IRequest<ApiResponse<IReadOnlyList<TrendingVideoDto>>>;
 
@@ -24,4 +24,4 @@ public record SaveAnalysisSessionCommand(
 
 public record AnalyzeSingleVideoCommand(
     string VideoId
-) : IRequest<ApiResponse<GapReportDto>>; // استبدلنا VideoMetricsAnalysis بـ GapReportDto
+) : IRequest<ApiResponse<GapReportDto>>;

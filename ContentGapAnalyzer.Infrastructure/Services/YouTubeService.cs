@@ -15,6 +15,23 @@ public class YouTubeService : IYouTubeService
     private readonly string _apiKey;
     private const string BaseUrl = "https://www.googleapis.com/youtube/v3";
 
+    // قاموس لتحويل أسماء الفئات إلى أرقامها لسهولة استخدام اليوزر
+    private static readonly Dictionary<string, string> CategoryMap = new(StringComparer.OrdinalIgnoreCase)
+    {
+        { "Film", "1" }, { "Autos", "2" }, { "Music", "10" }, { "Pets", "15" },
+        { "Sports", "17" }, { "Gaming", "20" }, { "People", "22" }, { "Comedy", "23" },
+        { "Entertainment", "24" }, { "News", "25" }, { "Howto", "26" }, { "Education", "27" },
+        { "Science", "28" }, { "Travel", "19" }
+    };
+
+    // إضافة قاموس لتحويل أسماء البلاد إلى كود الدولة المطلوب لـ API
+    private static readonly Dictionary<string, string> CountryMap = new(StringComparer.OrdinalIgnoreCase)
+    {
+        { "Egypt", "EG" }, { "United States", "US" }, { "Saudi Arabia", "SA" },
+        { "United Arab Emirates", "AE" }, { "United Kingdom", "GB" }, { "Germany", "DE" },
+        { "Canada", "CA" }, { "France", "FR" }, { "Japan", "JP" }, { "India", "IN" }
+    };
+
     public YouTubeService(
         IHttpClientFactory httpClientFactory,
         IConfiguration configuration,
@@ -41,11 +58,19 @@ public class YouTubeService : IYouTubeService
                 return await SearchVideosAsync(keywords, maxResults, cancellationToken);
             }
 
+            // تحويل اسم الفئة إلى رقم إذا كان موجوداً في القاموس أو استخدام الرقم المباشر
+            var categoryParam = string.IsNullOrWhiteSpace(categoryId) ? "" :
+                (CategoryMap.TryGetValue(categoryId, out var mapped) ? mapped : categoryId);
+
+            // تحويل اسم الدولة إلى كود إذا كان موجوداً في القاموس أو استخدام المدخل المباشر
+            var regionParam = string.IsNullOrWhiteSpace(region) ? "" :
+                (CountryMap.TryGetValue(region, out var countryCode) ? countryCode : region);
+
             var url = $"{BaseUrl}/videos?part=snippet,statistics,contentDetails" +
                       $"&chart=mostPopular" +
-                      $"&regionCode={Uri.EscapeDataString(region)}" +
+                      (string.IsNullOrWhiteSpace(regionParam) ? "" : $"&regionCode={Uri.EscapeDataString(regionParam)}") +
                       $"&maxResults={maxResults}" +
-                      (string.IsNullOrWhiteSpace(categoryId) ? "" : $"&videoCategoryId={Uri.EscapeDataString(categoryId)}") +
+                      (string.IsNullOrWhiteSpace(categoryParam) ? "" : $"&videoCategoryId={Uri.EscapeDataString(categoryParam)}") +
                       $"&key={_apiKey}";
 
             _logger.LogDebug("Fetching trending videos: {Url}", url.Replace(_apiKey, "***"));

@@ -113,6 +113,31 @@ public class GeminiAiService : IGeminiAiService
         );
     }
 
+    public async Task<AggregateReport> GenerateAggregateReportAsync(List<GapAnalysisResult> previousResults, CancellationToken cancellationToken = default)
+    {
+        var summaryContext = JsonSerializer.Serialize(previousResults);
+
+        var prompt = $@"You are an expert YouTube Strategist. I have analyzed {previousResults.Count} videos.
+        Here is the data from all previous analyses: {summaryContext}
+
+        TASK: Perform a strategic synthesis and provide a COMPREHENSIVE ROADMAP.
+        1. ImmediateActions: Define actionable steps for the next 30 days (Thumbnails, Hooks).
+        2. ContentStrategy: Define content patterns to focus on to increase TrendGrowth.
+        3. RetentionTactics: Propose methods to reduce drop-off based on AudiencePainPoints.
+        4. GrowthOpportunities: Identify competitor gaps to exploit.
+        5. ExecutiveSummary: Summarize the overall strategic direction in two sentences.
+
+        Return ONLY JSON matching this exact schema:
+        {{ 
+            ""immediateActions"": [], ""contentStrategy"": [], ""retentionTactics"": [], ""growthOpportunities"": [], ""executiveSummary"": ""string"" 
+        }}";
+
+        var responseText = await CallGeminiAsync(prompt, cancellationToken);
+        var parsed = JsonSerializer.Deserialize<AggregateReport>(Sanitize(responseText), JsonOptions);
+        
+        return parsed ?? new AggregateReport(new List<string>(), new List<string>(), new List<string>(), new List<string>(), "Analysis currently unavailable.");
+    }
+
     private async Task<string> CallGeminiAsync(string prompt, CancellationToken cancellationToken)
     {
         var body = new
@@ -123,7 +148,7 @@ public class GeminiAiService : IGeminiAiService
             },
             generationConfig = new
             {
-                temperature = 0.2,
+                temperature = 0.0,
                 topK = 40,
                 topP = 0.95,
                 maxOutputTokens = 4096,
@@ -171,7 +196,7 @@ public class GeminiAiService : IGeminiAiService
 
     private static string Sanitize(string raw)
     {
-        if (string.IsNullOrWhiteSpace(raw)) return raw;
+        if (string.IsNullOrWhiteSpace(raw)) return string.Empty;
         raw = raw.Replace("```json", "").Replace("```", "").Trim();
         int firstBrace = raw.IndexOf('{');
         int lastBrace = raw.LastIndexOf('}');
@@ -185,7 +210,17 @@ public class GeminiAiService : IGeminiAiService
         Title: {input.Title}, Category: {input.Category}, Views: {input.ViewCount}, Likes: {input.LikeCount}, Comments: {input.CommentCount}, CTR: {input.ClickThroughRate}, AgeDays: {ageInDays}, Velocity: {viewsPerDay}, Engagement: {engagementRate}";
 
     private static string BuildGapPrompt(GapAnalysisInput input) =>
-        $@"Analyze the gap between target and competitors and return ONLY a JSON object matching this schema: {{ ""contentGaps"": [], ""audiencePainPoints"": [], ""missedOpportunities"": [], ""weaknesses"": [], ""strengths"": [], ""seoRecommendations"": [], ""ctrOptimizationSuggestions"": [], ""hookImprovements"": [], ""retentionImprovements"": [], ""viralPotentialAnalysis"": ""string"", ""competitionDifficulty"": 0.0, ""opportunityScore"": 0.0, ""trendGrowth"": 0.0 }}
+        $@"You are an expert YouTube Strategist. Perform a strict two-part analysis for the target video:
+
+        1. ANALYSIS SECTION (Diagnostic Only): Focus purely on 'what is currently happening'. Identify Strengths, Weaknesses, Content Gaps, Audience Pain Points, and Viral Potential based on current state. Do not offer suggestions here.
+        2. ROADMAP SECTION (Actionable Strategy Only): Focus purely on 'what to do next'. Provide Missed Opportunities, SEO, CTR, Hook, and Retention improvements. Do not restate the analysis here.
+
+        Return ONLY a raw JSON object (no markdown, no backticks) matching this exact schema: 
+        {{ 
+          ""analysis"": {{ ""strengths"": [], ""weaknesses"": [], ""contentGaps"": [], ""audiencePainPoints"": [], ""viralPotentialAnalysis"": ""string"" }},
+          ""roadmap"": {{ ""missedOpportunities"": [], ""seoRecommendations"": [], ""ctrOptimizationSuggestions"": [], ""hookImprovements"": [], ""retentionImprovements"": [] }},
+          ""competitionDifficulty"": 0.0, ""opportunityScore"": 0.0, ""trendGrowth"": 0.0 
+        }}
         Target: {input.TargetVideo.Title}
         Competitors: {string.Join("\n", input.CompetitorVideos.Select(v => v.Title))}";
 
@@ -196,11 +231,35 @@ public class GeminiAiService : IGeminiAiService
     
     private sealed class InternalMetricsResponse { public double CompetitionDifficulty { get; set; } public double OpportunityScore { get; set; } public double TrendGrowth { get; set; } public string? Reasoning { get; set; } }
     private sealed class InternalGapAnalysisResponse { 
-        public List<string>? ContentGaps { get; set; } public List<string>? AudiencePainPoints { get; set; } 
-        public List<string>? MissedOpportunities { get; set; } public List<string>? Weaknesses { get; set; } 
-        public List<string>? Strengths { get; set; } public List<string>? SeoRecommendations { get; set; } 
-        public List<string>? CtrOptimizationSuggestions { get; set; } public List<string>? HookImprovements { get; set; } 
-        public List<string>? RetentionImprovements { get; set; } public string? ViralPotentialAnalysis { get; set; } 
-        public double CompetitionDifficulty { get; set; } public double OpportunityScore { get; set; } public double TrendGrowth { get; set; } 
+        public AnalysisSection? Analysis { get; set; }
+        public RoadmapSection? Roadmap { get; set; }
+        public double CompetitionDifficulty { get; set; } public double OpportunityScore { get; set; } public double TrendGrowth { get; set; }
+        
+        public List<string>? ContentGaps => Analysis?.ContentGaps;
+        public List<string>? AudiencePainPoints => Analysis?.AudiencePainPoints;
+        public List<string>? Weaknesses => Analysis?.Weaknesses;
+        public List<string>? Strengths => Analysis?.Strengths;
+        public string? ViralPotentialAnalysis => Analysis?.ViralPotentialAnalysis;
+        public List<string>? MissedOpportunities => Roadmap?.MissedOpportunities;
+        public List<string>? SeoRecommendations => Roadmap?.SeoRecommendations;
+        public List<string>? CtrOptimizationSuggestions => Roadmap?.CtrOptimizationSuggestions;
+        public List<string>? HookImprovements => Roadmap?.HookImprovements;
+        public List<string>? RetentionImprovements => Roadmap?.RetentionImprovements;
+    }
+
+    private sealed class AnalysisSection {
+        public List<string>? Strengths { get; set; }
+        public List<string>? Weaknesses { get; set; }
+        public List<string>? ContentGaps { get; set; }
+        public List<string>? AudiencePainPoints { get; set; }
+        public string? ViralPotentialAnalysis { get; set; }
+    }
+
+    private sealed class RoadmapSection {
+        public List<string>? MissedOpportunities { get; set; }
+        public List<string>? SeoRecommendations { get; set; }
+        public List<string>? CtrOptimizationSuggestions { get; set; }
+        public List<string>? HookImprovements { get; set; }
+        public List<string>? RetentionImprovements { get; set; }
     }
 }
