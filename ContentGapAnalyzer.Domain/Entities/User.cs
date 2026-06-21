@@ -22,8 +22,4 @@ public class User : BaseEntity
     public bool IsActive { get; set; } = true;
     public DateTime? LastLoginAt { get; set; }
     
-    public int Credits { get; set; } = 0; 
-    
-    // ملاحظة: لا تضعي هنا CreatedAt أو UpdatedAt أو IsDeleted
-    // لأنها موجودة بالفعل في BaseEntity الذي يرث منه هذا الكلاس
 }
