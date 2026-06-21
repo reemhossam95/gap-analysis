@@ -4,7 +4,7 @@ using ContentGapAnalyzer.Application.DTOs;
 using ContentGapAnalyzer.Application.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-
+using System.Globalization;
 namespace ContentGapAnalyzer.Infrastructure.Services;
 
 public class YouTubeService : IYouTubeService
@@ -23,13 +23,15 @@ public class YouTubeService : IYouTubeService
         { "Science", "28" }, { "Travel", "19" }
     };
 
-    private static readonly Dictionary<string, string> CountryMap = new(StringComparer.OrdinalIgnoreCase)
+    private string GetCountryCode(string countryName)
     {
-        { "Egypt", "EG" }, { "United States", "US" }, { "Saudi Arabia", "SA" },
-        { "United Arab Emirates", "AE" }, { "United Kingdom", "GB" }, { "Germany", "DE" },
-        { "Canada", "CA" }, { "France", "FR" }, { "Japan", "JP" }, { "India", "IN" }
-    };
+        // البحث في كل دول العالم المتاحة في النظام
+        var region = CultureInfo.GetCultures(CultureTypes.SpecificCultures)
+            .Select(c => new RegionInfo(c.Name))
+            .FirstOrDefault(r => r.EnglishName.Contains(countryName, StringComparison.OrdinalIgnoreCase));
 
+        return region?.TwoLetterISORegionName ?? "EG";
+    }
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         PropertyNameCaseInsensitive = true,
@@ -80,8 +82,7 @@ public class YouTubeService : IYouTubeService
             var categoryParam = string.IsNullOrWhiteSpace(categoryId) ? "" :
                 (CategoryMap.TryGetValue(categoryId, out var mapped) ? mapped : categoryId);
 
-            var regionParam = string.IsNullOrWhiteSpace(region) ? "" :
-                (CountryMap.TryGetValue(region, out var countryCode) ? countryCode : region);
+            var regionParam = string.IsNullOrWhiteSpace(region) ? "" : GetCountryCode(region);
 
             var url = $"{BaseUrl}/videos?part=snippet,statistics,contentDetails" +
                       $"&chart=mostPopular" +
