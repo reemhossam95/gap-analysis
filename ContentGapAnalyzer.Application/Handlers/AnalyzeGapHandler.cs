@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System.Text.Json;
 using ContentGapAnalyzer.Application.Commands;
 using ContentGapAnalyzer.Application.Common;
@@ -7,6 +8,7 @@ using ContentGapAnalyzer.Domain.Enums;
 using ContentGapAnalyzer.Domain.Interfaces;        
 using ContentGapAnalyzer.Application.Interfaces;  
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
@@ -19,23 +21,43 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMemoryCache _cache;
     private readonly ILogger<AnalyzeGapHandler> _logger;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
     public AnalyzeGapHandler(
         IYouTubeService youTubeService,
         IGeminiAiService geminiAiService,
         IUnitOfWork unitOfWork,
         IMemoryCache cache,
-        ILogger<AnalyzeGapHandler> logger)
+        ILogger<AnalyzeGapHandler> logger,
+        IHttpContextAccessor httpContextAccessor)
     {
         _youTubeService = youTubeService;
         _geminiAiService = geminiAiService;
         _unitOfWork = unitOfWork;
         _cache = cache;
         _logger = logger;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public async Task<ApiResponse<GapReportDto>> Handle(AnalyzeGapCommand request, CancellationToken cancellationToken)
     {
+        // 1. التحقق من هوية المستخدم
+        var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userId))
+            return ApiResponse<GapReportDto>.Fail("User is not authenticated.");
+
+        // 2. الوصول لليوزر باستخدام الـ Repository العام
+        var userRepo = _unitOfWork.Repository<User>();
+        
+        if (!int.TryParse(userId, out int intUserId))
+            return ApiResponse<GapReportDto>.Fail("Invalid user identification.");
+
+        var userResult = await userRepo.FindAsync(u => u.Id == intUserId, cancellationToken);
+        var user = userResult.FirstOrDefault();
+
+        if (user == null || user.Credits <= 0)
+            return ApiResponse<GapReportDto>.Fail("Insufficient credits for this analysis.");
+
         var cacheKey = $"gap_report:{request.VideoId}";
 
         if (_cache.TryGetValue(cacheKey, out GapReportDto? cachedDto) && cachedDto is not null)
@@ -47,12 +69,12 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         _logger.LogInformation("Starting gap analysis for video: {VideoId}", request.VideoId);
 
         var gapReportRepo = _unitOfWork.Repository<GapReport>();
-        var existing = await gapReportRepo.FindAsync(g => g.VideoId == request.VideoId && !g.IsDeleted, cancellationToken);
+        var existing = await gapReportRepo.FindAsync(g => g.VideoId == request.VideoId && !g.IsDeleted && g.UserId == userId, cancellationToken);
         var existingReport = existing.FirstOrDefault();
 
         if (existingReport?.Status == GapReportStatus.Completed)
         {
-            var dto = MapToDto(existingReport);
+            var dto = MapToDto(existingReport, user.Credits);
             _cache.Set(cacheKey, dto, TimeSpan.FromHours(6));
             return ApiResponse<GapReportDto>.Ok(dto, "Gap report retrieved from database");
         }
@@ -82,6 +104,7 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
 
         var report = existingReport ?? new GapReport
         {
+            UserId = userId,
             VideoId = request.VideoId,
             VideoTitle = targetVideo.Title,
             ChannelId = targetVideo.ChannelId,
@@ -99,9 +122,6 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         report.HookImprovementsJson = JsonSerializer.Serialize(analysisResult.HookImprovements);
         report.RetentionImprovementsJson = JsonSerializer.Serialize(analysisResult.RetentionImprovements);
         
-        // التعديل هنا: إذا أضفتِ ActionPlan في كلاس Report، أضيفي هذا السطر:
-        // report.ActionPlanJson = JsonSerializer.Serialize(analysisResult.ActionPlan);
-
         report.ViralPotentialAnalysis = analysisResult.ViralPotentialAnalysis;
         report.CompetitionDifficulty = analysisResult.CompetitionDifficulty;
         report.OpportunityScore = analysisResult.OpportunityScore;
@@ -114,15 +134,18 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         else
             await gapReportRepo.UpdateAsync(report, cancellationToken);
 
+        user.Credits -= 1;
+        await userRepo.UpdateAsync(user);
+        
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        var resultDto = MapToDto(report);
+        var resultDto = MapToDto(report, user.Credits);
         _cache.Set(cacheKey, resultDto, TimeSpan.FromHours(6));
 
         return ApiResponse<GapReportDto>.Ok(resultDto, "Gap analysis completed successfully");
     }
 
-    private static GapReportDto MapToDto(GapReport report) => new(
+    private static GapReportDto MapToDto(GapReport report, int remainingCredits) => new(
         report.Id,
         report.VideoId,
         report.VideoTitle,
@@ -141,7 +164,8 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         report.CompetitionDifficulty,
         report.OpportunityScore,
         report.TrendGrowth,
-        report.CreatedAt
+        report.CreatedAt,
+        remainingCredits
     );
 
     private static List<string> Deserialize(string json)

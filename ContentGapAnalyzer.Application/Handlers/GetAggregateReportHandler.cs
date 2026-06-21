@@ -5,7 +5,9 @@ using ContentGapAnalyzer.Domain.Entities;
 using ContentGapAnalyzer.Domain.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using System.Text.Json;
+using System.Security.Claims; // تم الإضافة
 
 namespace ContentGapAnalyzer.Application.Handlers;
 
@@ -13,15 +15,42 @@ public class GetAggregateReportHandler : IRequestHandler<GetAggregateReportQuery
 {
     private readonly IGeminiAiService _geminiService;
     private readonly IRepository<GapReport> _repository;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public GetAggregateReportHandler(IGeminiAiService geminiService, IRepository<GapReport> repository)
+    public GetAggregateReportHandler(
+        IGeminiAiService geminiService, 
+        IRepository<GapReport> repository,
+        IUnitOfWork unitOfWork,
+        IHttpContextAccessor httpContextAccessor)
     {
         _geminiService = geminiService;
         _repository = repository;
+        _unitOfWork = unitOfWork;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     public async Task<AggregateReport> Handle(GetAggregateReportQuery request, CancellationToken cancellationToken)
     {
+        // 1. التحقق من المستخدم وخصم الرصيد
+        // استخدام الـ Claims للوصول للـ ID الحقيقي الخاص بالمستخدم
+        var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        
+        if (string.IsNullOrEmpty(userId))
+            throw new UnauthorizedAccessException("User is not authenticated.");
+            
+        var userRepo = _unitOfWork.Repository<User>();
+        
+        if (!int.TryParse(userId, out int intUserId))
+            throw new Exception("Invalid user identification.");
+
+        var userResult = await userRepo.FindAsync(u => u.Id == intUserId, cancellationToken);
+        var user = userResult.FirstOrDefault();
+
+        if (user == null || user.Credits <= 0)
+            throw new Exception("Insufficient credits for this aggregate report.");
+
+        // 2. جلب البيانات
         var query = _repository.Query();
 
         if (!string.IsNullOrEmpty(request.ChannelId))
@@ -48,7 +77,6 @@ public class GetAggregateReportHandler : IRequestHandler<GetAggregateReportQuery
             x.TrendGrowth
         )).ToList();
 
-        // هنا التعديل: مطابقة الـ Constructor الجديد للـ AggregateReport
         if (data == null || !data.Any())
         {
             return new AggregateReport(
@@ -60,6 +88,13 @@ public class GetAggregateReportHandler : IRequestHandler<GetAggregateReportQuery
             );
         }
 
-        return await _geminiService.GenerateAggregateReportAsync(data, cancellationToken);
+        // 3. تنفيذ العملية وخصم الرصيد
+        var result = await _geminiService.GenerateAggregateReportAsync(data, cancellationToken);
+
+        user.Credits -= 1;
+        await userRepo.UpdateAsync(user);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        return result;
     }
 }

@@ -37,8 +37,6 @@ public class DiscoveryController : ControllerBase
         var totalTopics = await videoRepo.Query().CountAsync(ct);
         var totalReports = await reportRepo.Query().CountAsync(ct);
         
-        // تعديل الشرط: تم تبسيطه لضمان احتساب أي تقرير يحتوي على درجة كـ "Easy Win"
-        // للتأكد من أن المشكلة ليست في صرامة الشرط
         var easyWins = await reportRepo.Query()
             .CountAsync(r => r.OpportunityScore > 60, ct);
             
@@ -93,27 +91,15 @@ public class DiscoveryController : ControllerBase
         return result.Success ? Ok(result) : BadRequest(result);
     }
 
-    [HttpGet("channels/{channelId}/videos")]
+    [HttpGet("channels/{channelName}/videos")]
     [ProducesResponseType(typeof(ApiResponse<IReadOnlyList<VideoDto>>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetChannelVideos(
-        [FromRoute] string channelId,
+        [FromRoute] string channelName,
         CancellationToken cancellationToken = default)
     {
-        var query = new GetVideosByChannelQuery(channelId);
+        // الآن نرسل اسم القناة (channelName) بدلاً من الـ ID
+        var query = new GetVideosByChannelQuery(channelName);
         var result = await _mediator.Send(query, cancellationToken);
-
-        return result.Success ? Ok(result) : BadRequest(result);
-    }
-
-    [HttpPost("analyze/{videoId}")]
-    [EnableRateLimiting("analysis")]
-    [ProducesResponseType(typeof(ApiResponse<GapReportDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> AnalyzeVideo(
-        [FromRoute] string videoId,
-        CancellationToken cancellationToken = default)
-    {
-        var command = new AnalyzeGapCommand(videoId);
-        var result = await _mediator.Send(command, cancellationToken);
 
         return result.Success ? Ok(result) : BadRequest(result);
     }

@@ -4,9 +4,15 @@ namespace ContentGapAnalyzer.Application.Interfaces;
 
 public interface IYouTubeService
 {
+    Task<string?> GetChannelIdByNameAsync(string channelName, CancellationToken cancellationToken = default);
+
     Task<IReadOnlyList<TrendingVideoDto>> GetTrendingVideosAsync(
         string region, string categoryId, string keywords, int maxResults,
         CancellationToken cancellationToken = default);
+
+    // هذه الميثود هي المفتاح: ستجلب البيانات الكاملة للفيديو (بما فيها المشاهدات واللايكات الحقيقية)
+    Task<IReadOnlyList<TrendingVideoDto>> GetVideoStatisticsAsync(
+        List<string> videoIds, CancellationToken cancellationToken = default);
 
     Task<TrendingVideoDto?> GetVideoDetailsAsync(string videoId, CancellationToken cancellationToken = default);
 
@@ -15,6 +21,9 @@ public interface IYouTubeService
 
     Task<IReadOnlyList<TrendingVideoDto>> GetCompetitorVideosAsync(
         string videoId, int maxResults, CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<TrendingVideoDto>> GetVideosByChannelIdAsync(
+        string channelId, int maxResults, CancellationToken cancellationToken = default);
 }
 
 public interface IGeminiAiService

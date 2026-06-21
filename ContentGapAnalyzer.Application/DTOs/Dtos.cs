@@ -12,14 +12,16 @@ public record VideoDto(
     long ViewCount,
     long LikeCount,
     long CommentCount,
-    long WatchTimeMinutes,
-    double ClickThroughRate,
-    double AverageViewDuration,
+
+    double GapScore,
+    double DemandScore,
+    double CompetitionScore,
+    double TrendScore,
+
     DateTime PublishedAt,
     string Category,
     DateTime CreatedAt
 );
-
 public record ChannelDto(
     int Id,
     string ChannelId,
@@ -51,7 +53,8 @@ public record GapReportDto(
     double CompetitionDifficulty,
     double OpportunityScore,
     double TrendGrowth,
-    DateTime CreatedAt
+    DateTime CreatedAt,
+    int RemainingCredits = 0
 );
 
 public record AnalysisSessionDto(
@@ -81,8 +84,10 @@ public record OpportunityDto(
 );
 
 public record TrendingVideoDto(
+        int Id,                 
     string VideoId,
     string Title,
+    string Description,
     string ChannelId,
     string ChannelTitle,
     string ThumbnailUrl,
@@ -165,4 +170,4 @@ public record AggregateReport(
     [property: JsonPropertyName("growthOpportunities")] List<string> GrowthOpportunities, // الفرص المتاحة للتوسع
     [property: JsonPropertyName("executiveSummary")] string ExecutiveSummary       // الخلاصة التنفيذية
 );    
-    
+  

@@ -21,7 +21,9 @@ public class GeminiAiService : IGeminiAiService
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         PropertyNameCaseInsensitive = true,
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        AllowTrailingCommas = true,
+        ReadCommentHandling = JsonCommentHandling.Skip
     };
 
     public GeminiAiService(
@@ -56,7 +58,11 @@ public class GeminiAiService : IGeminiAiService
 
             var responseText = await CallGeminiAsync(prompt, CancellationToken.None);
             var cleaned = Sanitize(responseText);
+            _logger.LogWarning("RAW GEMINI RESPONSE:");
+            _logger.LogWarning(responseText);
 
+            _logger.LogWarning("CLEANED RESPONSE:");
+            _logger.LogWarning(cleaned);
             var parsed = JsonSerializer.Deserialize<InternalMetricsResponse>(cleaned, JsonOptions);
 
             if (parsed is null)
@@ -133,10 +139,28 @@ public class GeminiAiService : IGeminiAiService
         }}";
 
         var responseText = await CallGeminiAsync(prompt, cancellationToken);
-        var parsed = JsonSerializer.Deserialize<AggregateReport>(Sanitize(responseText), JsonOptions);
-        
-        return parsed ?? new AggregateReport(new List<string>(), new List<string>(), new List<string>(), new List<string>(), "Analysis currently unavailable.");
+        string cleaned = Sanitize(responseText);
+
+        try
+        {
+            return JsonSerializer.Deserialize<AggregateReport>(cleaned, JsonOptions) ?? CreateEmptyReport();
+        }
+        catch (JsonException ex)
+        {
+            _logger.LogError(ex, "Failed to deserialize AggregateReport. Raw response: {Raw}", cleaned);
+            
+            // محاولة أخيرة للإصلاح القسري للنص المقطوع
+            try 
+            { 
+                string forceFixed = cleaned.TrimEnd().TrimEnd(']').TrimEnd('}').TrimEnd('"') + "\"} }";
+                return JsonSerializer.Deserialize<AggregateReport>(forceFixed, JsonOptions) ?? CreateEmptyReport(); 
+            }
+            catch { return CreateEmptyReport(); }
+        }
     }
+
+    private AggregateReport CreateEmptyReport() => 
+        new AggregateReport(new List<string>(), new List<string>(), new List<string>(), new List<string>(), "Analysis currently unavailable due to data parsing error.");
 
     private async Task<string> CallGeminiAsync(string prompt, CancellationToken cancellationToken)
     {
@@ -197,10 +221,18 @@ public class GeminiAiService : IGeminiAiService
     private static string Sanitize(string raw)
     {
         if (string.IsNullOrWhiteSpace(raw)) return string.Empty;
+
+        // 1. إزالة الـ Markdown
         raw = raw.Replace("```json", "").Replace("```", "").Trim();
-        int firstBrace = raw.IndexOf('{');
-        int lastBrace = raw.LastIndexOf('}');
-        return (firstBrace != -1 && lastBrace != -1 && lastBrace > firstBrace) ? raw.Substring(firstBrace, lastBrace - firstBrace + 1) : raw;
+
+        // 2. إصلاح القطع في نهاية الـ JSON
+        if (!raw.EndsWith("}"))
+        {
+            if (raw.EndsWith("]")) raw += "}";
+            else raw += "\"} }"; 
+        }
+
+        return raw;
     }
 
     private static double Clamp(double value) => Math.Clamp(value, 0, 100);

@@ -6,6 +6,8 @@ using ContentGapAnalyzer.API.Middleware;
 using ContentGapAnalyzer.Application;
 using ContentGapAnalyzer.Infrastructure;
 using ContentGapAnalyzer.Infrastructure.Persistence;
+using ContentGapAnalyzer.Infrastructure.Services;
+using ContentGapAnalyzer.Domain.Interfaces;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -45,6 +47,8 @@ try
             options.JsonSerializerOptions.DefaultIgnoreCondition =
                 System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
         });
+
+    builder.Services.AddHttpContextAccessor(); // تم إضافة هذا السطر للوصول للـ User ID
 
     builder.Services.AddApiVersioning(options =>
     {
@@ -104,6 +108,11 @@ try
         });
     });
 
+    // إضافة CommandTimeout لـ DbContext هنا لضمان عدم حدوث Timeout
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+            sqlOptions => sqlOptions.CommandTimeout(120)));
+
     builder.Services.AddHealthChecks()
         .AddDbContextCheck<AppDbContext>("database");
 
@@ -140,9 +149,10 @@ try
     
     app.UseCors("AllowFrontend");
     
-    app.UseRateLimiter();
-    app.UseAuthorization();
-
+app.UseRateLimiter();
+    app.UseAuthentication(); // أضيفي هذا السطر هنا
+    app.UseAuthorization();  // واتركي هذا السطر كما هو
+    
     app.MapControllers();
     app.MapHealthChecks("/health");
 

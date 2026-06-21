@@ -19,7 +19,8 @@ public record GetTrendingVideosFromCacheQuery(
     int MaxResults
 ) : IRequest<ApiResponse<IReadOnlyList<TrendingVideoDto>>>;
 
-public record GetVideosByChannelQuery(string ChannelId) : IRequest<ApiResponse<IReadOnlyList<VideoDto>>>;
+// تم التعديل هنا ليصبح ChannelTitle ليتطابق مع اسم الخاصية في الـ Entity
+public record GetVideosByChannelQuery(string ChannelTitle) : IRequest<ApiResponse<IReadOnlyList<VideoDto>>>;
 
 // الإضافة الجديدة للتقرير التجميعي:
 public record GetAggregateReportQuery(string? ChannelId) : IRequest<AggregateReport>;

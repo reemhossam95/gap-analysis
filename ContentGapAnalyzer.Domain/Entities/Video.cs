@@ -12,6 +12,10 @@ public class Video : BaseEntity
     public long ViewCount { get; set; }
     public long LikeCount { get; set; }
     public long CommentCount { get; set; }
+    public double GapScore { get; set; }
+public double DemandScore { get; set; }
+public double CompetitionScore { get; set; }
+public double TrendScore { get; set; }
     public long WatchTimeMinutes { get; set; }
     public double ClickThroughRate { get; set; }
     public double AverageViewDuration { get; set; }

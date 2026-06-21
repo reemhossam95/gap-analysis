@@ -4,6 +4,7 @@ using ContentGapAnalyzer.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContentGapAnalyzer.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260619024803_UpdateListHandling")]
+    partial class UpdateListHandling
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +67,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasIndex("GapReportId");
 
-                    b.ToTable("AnalysisSessions", (string)null);
+                    b.ToTable("AnalysisSessions");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.AnalyticsSnapshot", b =>
@@ -116,7 +119,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasIndex("ChannelId");
 
-                    b.ToTable("AnalyticsSnapshots", (string)null);
+                    b.ToTable("AnalyticsSnapshots");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.CachedTrendResult", b =>
@@ -164,7 +167,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CachedTrendResults", (string)null);
+                    b.ToTable("CachedTrendResults");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.Channel", b =>
@@ -293,10 +296,6 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("VideoId")
                         .IsRequired()
                         .HasColumnType("nvarchar(32)");
@@ -363,7 +362,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasIndex("ChannelId");
 
-                    b.ToTable("HistoricalStatistics", (string)null);
+                    b.ToTable("HistoricalStatistics");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.Opportunity", b =>
@@ -425,7 +424,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Opportunities", (string)null);
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.Video", b =>
@@ -455,21 +454,12 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
                     b.Property<long>("CommentCount")
                         .HasColumnType("bigint");
 
-                    b.Property<double>("CompetitionScore")
-                        .HasColumnType("float");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<double>("DemandScore")
-                        .HasColumnType("float");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("GapScore")
-                        .HasColumnType("float");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -489,9 +479,6 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(512)
                         .HasColumnType("nvarchar(512)");
-
-                    b.Property<double>("TrendScore")
-                        .HasColumnType("float");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -547,9 +534,6 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
                     b.Property<string>("HookImprovements")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("MissedOpportunities")
                         .IsRequired()

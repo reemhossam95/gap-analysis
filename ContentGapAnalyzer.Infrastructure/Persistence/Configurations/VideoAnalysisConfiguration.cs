@@ -11,7 +11,6 @@ public class VideoAnalysisConfiguration : IEntityTypeConfiguration<VideoAnalysis
     public void Configure(EntityTypeBuilder<VideoAnalysis> builder)
     {
         builder.ToTable("VideoAnalyses");
-        builder.HasKey(v => v.Id);
 
         builder.Property(v => v.OpportunityScore).IsRequired();
 

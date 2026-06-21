@@ -9,6 +9,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
+using ContentGapAnalyzer.Application.Interfaces;
 
 namespace ContentGapAnalyzer.Application.Handlers;
 
@@ -145,26 +146,79 @@ public class GetVideosByChannelHandler : IRequestHandler<GetVideosByChannelQuery
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly ILogger<GetVideosByChannelHandler> _logger;
+    private readonly IYouTubeService _youTubeService;
 
-    public GetVideosByChannelHandler(IUnitOfWork unitOfWork, ILogger<GetVideosByChannelHandler> logger)
+    public GetVideosByChannelHandler(IUnitOfWork unitOfWork, ILogger<GetVideosByChannelHandler> logger, IYouTubeService youTubeService)
     {
         _unitOfWork = unitOfWork;
         _logger = logger;
+        _youTubeService = youTubeService;
     }
 
     public async Task<ApiResponse<IReadOnlyList<VideoDto>>> Handle(
         GetVideosByChannelQuery request, CancellationToken cancellationToken)
     {
-        var repo = _unitOfWork.Repository<Video>();
-        var videos = await repo.FindAsync(v => v.ChannelId == request.ChannelId && !v.IsDeleted, cancellationToken);
+        // البحث عن القناة بالاسم (Title) في الداتابيز باستخدام التعديل الجديد ChannelTitle
+        var channel = await _unitOfWork.Repository<Channel>().Query()
+            .FirstOrDefaultAsync(c => c.Title == request.ChannelTitle, cancellationToken);
 
-        IReadOnlyList<VideoDto> dtos = videos
-            .OrderByDescending(v => v.PublishedAt)
-            .Select(v => new VideoDto(v.Id, v.VideoId, v.ChannelId, v.Title, v.Description,
-                v.ThumbnailUrl, v.ViewCount, v.LikeCount, v.CommentCount, v.WatchTimeMinutes,
-                v.ClickThroughRate, v.AverageViewDuration, v.PublishedAt, v.Category, v.CreatedAt))
+        IReadOnlyList<VideoDto> dtos;
+
+        if (channel != null)
+        {
+            var videos = await _unitOfWork.Repository<Video>()
+                .FindAsync(v => v.ChannelId == channel.ChannelId && !v.IsDeleted, cancellationToken);
+
+            dtos = videos.OrderByDescending(v => v.PublishedAt)
+                .Select(v => new VideoDto(
+                    v.Id,
+                    v.VideoId,
+                    v.ChannelId,
+                    v.Title,
+                    v.Description,
+                    v.ThumbnailUrl,
+                    v.ViewCount,
+                    v.LikeCount,
+                    v.CommentCount,
+
+            v.GapScore,
+            v.DemandScore,
+            v.CompetitionScore,
+            v.TrendScore,
+                    v.PublishedAt,
+                    v.Category,
+                    v.CreatedAt))
+                .ToList()
+                .AsReadOnly();
+        }
+        else
+        {
+            // البحث المباشر في يوتيوب إذا لم تكن القناة موجودة
+            var searchResults = await _youTubeService.SearchVideosAsync(request.ChannelTitle, 20, cancellationToken);
+
+            dtos = searchResults.Select(v => new VideoDto(
+                0,
+                v.VideoId,
+                "External",
+                v.Title,
+                v.Description,
+                v.ThumbnailUrl,
+
+                v.ViewCount,
+                v.LikeCount,
+                v.CommentCount,
+
+                v.GapScore,
+                v.DemandScore,
+                v.CompetitionScore,
+                v.TrendScore,
+
+                v.PublishedAt,
+                v.Category,
+                DateTime.UtcNow))
             .ToList()
             .AsReadOnly();
+        }
 
         return ApiResponse<IReadOnlyList<VideoDto>>.Ok(dtos);
     }

@@ -5,6 +5,7 @@ namespace ContentGapAnalyzer.Domain.Entities;
 
 public class GapReport : BaseEntity
 {
+    public string UserId { get; set; } = string.Empty;
     public string VideoId { get; set; } = string.Empty;
     public string VideoTitle { get; set; } = string.Empty;
     public string ChannelId { get; set; } = string.Empty;

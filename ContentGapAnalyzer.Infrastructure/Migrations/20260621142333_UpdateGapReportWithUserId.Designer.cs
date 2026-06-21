@@ -4,6 +4,7 @@ using ContentGapAnalyzer.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContentGapAnalyzer.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260621142333_UpdateGapReportWithUserId")]
+    partial class UpdateGapReportWithUserId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +67,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasIndex("GapReportId");
 
-                    b.ToTable("AnalysisSessions", (string)null);
+                    b.ToTable("AnalysisSessions");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.AnalyticsSnapshot", b =>
@@ -116,7 +119,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasIndex("ChannelId");
 
-                    b.ToTable("AnalyticsSnapshots", (string)null);
+                    b.ToTable("AnalyticsSnapshots");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.CachedTrendResult", b =>
@@ -164,7 +167,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CachedTrendResults", (string)null);
+                    b.ToTable("CachedTrendResults");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.Channel", b =>
@@ -363,7 +366,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasIndex("ChannelId");
 
-                    b.ToTable("HistoricalStatistics", (string)null);
+                    b.ToTable("HistoricalStatistics");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.Opportunity", b =>
@@ -425,7 +428,7 @@ namespace ContentGapAnalyzer.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Opportunities", (string)null);
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("ContentGapAnalyzer.Domain.Entities.Video", b =>

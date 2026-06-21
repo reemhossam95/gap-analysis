@@ -39,19 +39,6 @@ public class GapAnalysisController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("reports/{videoId}")]
-    [ProducesResponseType(typeof(ApiResponse<GapReportDto>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetReportByVideoId(
-        [FromRoute] string videoId,
-        CancellationToken cancellationToken = default)
-    {
-        var query = new GetGapReportByVideoIdQuery(videoId);
-        var result = await _mediator.Send(query, cancellationToken);
-
-        return result.Success ? Ok(result) : NotFound(result);
-    }
-
     [HttpGet("aggregate")]
     [ProducesResponseType(typeof(ApiResponse<AggregateReport>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]

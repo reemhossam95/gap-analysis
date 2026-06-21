@@ -19,7 +19,12 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
         var connectionString = config.GetConnectionString("DefaultConnection");
 
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseSqlServer(connectionString);
+        
+        // تم التعديل هنا: إضافة CommandTimeout بمدة 120 ثانية لمنع انتهاء مهلة الاتصال
+        optionsBuilder.UseSqlServer(connectionString, sqlOptions => 
+        {
+            sqlOptions.CommandTimeout(120);
+        });
 
         return new AppDbContext(optionsBuilder.Options);
     }

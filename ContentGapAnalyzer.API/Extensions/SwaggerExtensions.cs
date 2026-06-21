@@ -18,7 +18,6 @@ public static class SwaggerExtensions
                 Description = "AI-powered Content Gap Analysis Platform"
             });
 
-            // JWT Security (بدون OpenApiModels مباشرة)
             options.AddSecurityDefinition("Bearer", new()
             {
                 Name = "Authorization",
@@ -28,26 +27,15 @@ public static class SwaggerExtensions
                 In = Microsoft.OpenApi.Models.ParameterLocation.Header
             });
 
-            // options.AddSecurityRequirement(new()
-            // {
-            //     {
-            //         new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            //         {
-            //             Reference = new Microsoft.OpenApi.Models.OpenApiReference
-            //             {
-            //                 Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-            //                 Id = "Bearer"
-            //             }
-            //         },
-            //         Array.Empty<string>()
-            //     }
-            // });
-
+            // تحسين قراءة ملف الـ XML لضمان عدم حدوث خطأ
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
-            if (File.Exists(xmlPath))
+            // التأكد من وجود الملف وأن حجمه أكبر من صفر قبل محاولة قراءته
+            if (File.Exists(xmlPath) && new FileInfo(xmlPath).Length > 0)
+            {
                 options.IncludeXmlComments(xmlPath);
+            }
         });
 
         return services;
