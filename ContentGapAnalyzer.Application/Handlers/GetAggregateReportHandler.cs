@@ -7,7 +7,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
-using System.Security.Claims; // تم الإضافة
+using System.Security.Claims;
 
 namespace ContentGapAnalyzer.Application.Handlers;
 
@@ -32,7 +32,7 @@ public class GetAggregateReportHandler : IRequestHandler<GetAggregateReportQuery
 
     public async Task<AggregateReport> Handle(GetAggregateReportQuery request, CancellationToken cancellationToken)
     {
-        // 1. التحقق من المستخدم وخصم الرصيد
+        // 1. التحقق من المستخدم
         // استخدام الـ Claims للوصول للـ ID الحقيقي الخاص بالمستخدم
         var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         
@@ -47,8 +47,8 @@ public class GetAggregateReportHandler : IRequestHandler<GetAggregateReportQuery
         var userResult = await userRepo.FindAsync(u => u.Id == intUserId, cancellationToken);
         var user = userResult.FirstOrDefault();
 
-        if (user == null || user.Credits <= 0)
-            throw new Exception("Insufficient credits for this aggregate report.");
+        if (user == null)
+            throw new Exception("User not found.");
 
         // 2. جلب البيانات
         var query = _repository.Query();
@@ -88,12 +88,8 @@ public class GetAggregateReportHandler : IRequestHandler<GetAggregateReportQuery
             );
         }
 
-        // 3. تنفيذ العملية وخصم الرصيد
+        // 3. تنفيذ العملية
         var result = await _geminiService.GenerateAggregateReportAsync(data, cancellationToken);
-
-        user.Credits -= 1;
-        await userRepo.UpdateAsync(user);
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return result;
     }

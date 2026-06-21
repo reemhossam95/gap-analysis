@@ -53,8 +53,7 @@ public record GapReportDto(
     double CompetitionDifficulty,
     double OpportunityScore,
     double TrendGrowth,
-    DateTime CreatedAt,
-    int RemainingCredits = 0
+    DateTime CreatedAt
 );
 
 public record AnalysisSessionDto(

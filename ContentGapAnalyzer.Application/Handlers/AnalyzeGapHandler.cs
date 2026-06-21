@@ -55,8 +55,8 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         var userResult = await userRepo.FindAsync(u => u.Id == intUserId, cancellationToken);
         var user = userResult.FirstOrDefault();
 
-        if (user == null || user.Credits <= 0)
-            return ApiResponse<GapReportDto>.Fail("Insufficient credits for this analysis.");
+        if (user == null)
+            return ApiResponse<GapReportDto>.Fail("User not found.");
 
         var cacheKey = $"gap_report:{request.VideoId}";
 
@@ -74,7 +74,7 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
 
         if (existingReport?.Status == GapReportStatus.Completed)
         {
-            var dto = MapToDto(existingReport, user.Credits);
+            var dto = MapToDto(existingReport);
             _cache.Set(cacheKey, dto, TimeSpan.FromHours(6));
             return ApiResponse<GapReportDto>.Ok(dto, "Gap report retrieved from database");
         }
@@ -134,18 +134,15 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         else
             await gapReportRepo.UpdateAsync(report, cancellationToken);
 
-        user.Credits -= 1;
-        await userRepo.UpdateAsync(user);
-        
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        var resultDto = MapToDto(report, user.Credits);
+        var resultDto = MapToDto(report);
         _cache.Set(cacheKey, resultDto, TimeSpan.FromHours(6));
 
         return ApiResponse<GapReportDto>.Ok(resultDto, "Gap analysis completed successfully");
     }
 
-    private static GapReportDto MapToDto(GapReport report, int remainingCredits) => new(
+    private static GapReportDto MapToDto(GapReport report) => new(
         report.Id,
         report.VideoId,
         report.VideoTitle,
@@ -164,8 +161,7 @@ public class AnalyzeGapHandler : IRequestHandler<AnalyzeGapCommand, ApiResponse<
         report.CompetitionDifficulty,
         report.OpportunityScore,
         report.TrendGrowth,
-        report.CreatedAt,
-        remainingCredits
+        report.CreatedAt
     );
 
     private static List<string> Deserialize(string json)
